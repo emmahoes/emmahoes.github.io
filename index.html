@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma Hoes — Political Scientist, University of Zurich</title>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta name="author" content="Emma Hoes">
+<meta name="description" content="Emma Hoes is a political scientist at the University of Zurich studying how digital technologies shape the information ecosystem, with expertise in survey and field experiments.">
+<meta name="keywords" content="Emma Hoes, political science, misinformation, trust, AI, social media, survey experiments, field experiments, VIRENA, University of Zurich, Digital Democracy Lab">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Emma Hoes — Political Scientist, University of Zurich">
+<meta property="og:description" content="Political scientist at the University of Zurich studying how digital technologies shape the information ecosystem.">
+<meta property="og:url" content="https://emmahoes.com/">
+<meta property="og:image" content="https://emmahoes.com/assets/img/profile.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Emma Hoes — Political Scientist, University of Zurich">
+<meta name="twitter:description" content="Political scientist at the University of Zurich studying how digital technologies shape the information ecosystem.">
+<meta name="twitter:image" content="https://emmahoes.com/assets/img/profile.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* dark hero palette */
+  --hero-bg:#0e1116;
+  --hero-bg-2:#13171e;
+  --hero-ink:#eef1f4;
+  --hero-muted:#8b94a3;
+  --hero-line:#262c36;
+  /* light document palette */
+  --paper:#f7f3ec;
+  --paper-2:#fffdf9;
+  --ink:#171a1f;
+  --muted:#646b76;
+  --line:#e6ded1;
+  /* accent */
+  --amber:#ff6a1a;
+  --amber-bright:#ff7a29;
+  --amber-deep:#d24a06;   /* legible amber for links on light bg */
+  --amber-soft:#ffe6d6;
+
+  --display:"Space Grotesk",system-ui,sans-serif;
+  --wordmark:"Fraunces",Georgia,serif;
+  --body:"Inter",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --maxw:800px;
+}
+
+/* ---------- TEXT SELECTION ---------- */
+::selection{background:#ff7a29;color:#1a1205}
+::-moz-selection{background:#ff7a29;color:#1a1205}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.62;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--amber-deep);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:2px}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .inner{max-width:var(--maxw);margin:0 auto;padding:13px 24px;display:flex;flex-wrap:wrap;gap:20px;align-items:baseline}
+nav .brand{font-family:var(--wordmark);font-size:19px;font-weight:600;letter-spacing:-.01em;margin-right:auto;color:var(--ink);line-height:1}
+nav .brand b{color:var(--amber-deep);font-weight:600}
+nav a{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.01em}
+nav a:hover{color:var(--amber-deep);text-decoration:none}
+
+/* ---------- HERO (dark band) ---------- */
+.hero-band{
+  background:var(--paper);
+  background-image:radial-gradient(900px 380px at 82% -20%, rgba(245,166,35,.10), transparent 70%);
+  border-bottom:1px solid var(--line);
+}
+.hero{max-width:var(--maxw);margin:0 auto;padding:60px 24px 54px;display:grid;grid-template-columns:148px 1fr;gap:38px;align-items:start}
+.hero img{width:148px;height:148px;border-radius:4px;object-fit:cover;background:var(--paper-2);border:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:14px}
+.hero h1{font-family:var(--display);font-weight:600;font-size:46px;line-height:1;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px}
+.hero .role{font-size:15.5px;color:var(--muted);margin-bottom:20px}
+.hero .role a{color:var(--ink);border-bottom:1px solid var(--amber);text-decoration:none}
+.hero .role a:hover{color:var(--amber-deep)}
+.hero p{font-size:16px;color:#2b2f36;margin-bottom:20px;max-width:54ch}
+.hero p a{color:var(--amber-deep);text-decoration:none;border-bottom:1px solid rgba(245,166,35,.5)}
+.hero p a:hover{border-color:var(--amber-deep)}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:var(--paper-2);transition:border-color .15s,transform .15s,box-shadow .15s}
+.links a:hover{text-decoration:none;transform:translateY(-2px)}
+.links a svg{width:19px;height:19px;display:block}
+/* always-on brand colors */
+.links a.s-email{color:var(--amber-deep)}
+.links a.s-email:hover{border-color:var(--amber);box-shadow:0 5px 14px rgba(255,106,26,.20)}
+.links a.s-scholar{color:#4285f4}
+.links a.s-scholar:hover{border-color:#4285f4;box-shadow:0 5px 14px rgba(66,133,244,.20)}
+.links a.s-linkedin{color:#0a66c2}
+.links a.s-linkedin:hover{border-color:#0a66c2;box-shadow:0 5px 14px rgba(10,102,194,.20)}
+.links a.s-bluesky{color:#1185fe}
+.links a.s-bluesky:hover{border-color:#1185fe;box-shadow:0 5px 14px rgba(17,133,254,.20)}
+.links a.s-x{color:#111}
+.links a.s-x:hover{border-color:#111;box-shadow:0 5px 14px rgba(0,0,0,.18)}
+
+
+/* ---------- PDF SCROLL STRIP ---------- */
+.shelf{margin:0 -24px 26px;padding:4px 24px 16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.shelf::-webkit-scrollbar{height:8px}
+.shelf::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+.shelf::-webkit-scrollbar-thumb:hover{background:#c9ccd1}
+.shelf-row{display:flex;gap:16px;width:max-content}
+.card{scroll-snap-align:start;width:150px;flex:0 0 auto;text-decoration:none;color:inherit}
+.card:hover{text-decoration:none}
+.card .thumb{
+  width:150px;height:194px;border:1px solid var(--line);border-radius:4px;
+  background:var(--paper-2);overflow:hidden;position:relative;
+  display:flex;align-items:flex-end;
+  box-shadow:0 1px 0 rgba(0,0,0,.02);transition:border-color .15s, box-shadow .15s, transform .15s;
+}
+.card:hover .thumb{border-color:var(--amber);box-shadow:0 6px 18px rgba(255,106,26,.16);transform:translateY(-2px)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.card .thumb .ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
+  padding:12px;font-family:var(--mono);
+}
+.card .thumb .ph .v{font-size:10px;letter-spacing:.04em;color:var(--amber-deep);text-transform:uppercase}
+.card .thumb .ph .t{font-size:11px;line-height:1.3;color:#3a3f47;font-weight:500}
+.card .thumb .corner{position:absolute;top:0;right:0;border-width:0 18px 18px 0;border-style:solid;border-color:transparent var(--amber) transparent transparent;opacity:.9}
+.card .cap{font-family:var(--mono);font-size:10.5px;line-height:1.4;color:var(--muted);margin-top:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card:hover .cap{color:var(--ink)}
+.shelf-hint{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin:-2px 0 14px;letter-spacing:.02em}
+.shelf-hint::before{content:"⇆ ";color:var(--amber-deep)}
+
+/* ---------- DOCUMENT BODY (light) ---------- */
+main{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:46px 0;border-bottom:1px solid var(--line)}
+section:last-child{border-bottom:none}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--amber);display:inline-block}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{font-family:var(--display);font-weight:600;font-size:25px;letter-spacing:-.01em;margin-bottom:14px}
+
+.note{color:var(--muted);font-size:13px;margin-bottom:8px;font-family:var(--mono)}
+
+.pub{padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.55}
+.pub:last-child{border-bottom:none}
+.pub .year{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);margin-right:8px}
+.pub .venue{font-style:italic;color:#2b2f36}
+.pub strong{font-weight:600}
+.pub .tag{font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:2px 6px;margin-left:6px;white-space:nowrap;background:var(--paper-2)}
+.pub .tag.fc{color:var(--amber-deep);border-color:var(--amber);background:var(--amber-soft)}
+
+.row{padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.row:last-child{border-bottom:none}
+.row .meta{color:var(--muted);font-size:13.5px;margin-top:3px;font-family:var(--mono)}
+
+.btn{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:500;padding:10px 18px;border:1px solid var(--ink);border-radius:4px;color:var(--ink);background:var(--paper-2)}
+.btn:hover{background:var(--ink);color:var(--amber-bright);text-decoration:none}
+
+.contact{font-size:15.5px;color:#2b2f36}
+.contact .addr{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.75;margin-top:10px}
+
+footer{max-width:var(--maxw);margin:0 auto;padding:26px 24px 52px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+footer .amp{color:var(--amber-deep)}
+
+@media(max-width:560px){
+  .hero{grid-template-columns:1fr;gap:24px;padding:48px 24px 44px}
+  .hero img{width:116px;height:116px}
+  .hero h1{font-size:36px}
+  nav .brand{width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="brand">Emma <b>H</b>oes</span>
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#chapters">Chapters</a>
+    <a href="#working">Working papers</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero-band">
+  <header class="hero" id="about">
+    <img src="assets/img/profile.jpg" alt="Emma Hoes">
+    <div>
+      <div class="kicker">Political Scientist · University of Zurich</div>
+      <h1>Emma Hoes</h1>
+      <div class="role">Department of Political Science, <a href="https://www.ipz.uzh.ch/en.html">University of Zurich</a></div>
+      <p>I study how digital technologies shape the information ecosystem and, with it, political behavior, trust in institutions, and what citizens come to believe. A current strand looks at content that is harmful but not false and its effects on political attitudes. I'm based at the Department of Political Science at the University of Zurich, with expertise in the design of survey and field experiments. I'm also the lead developer of <a href="assets/pdf/virena.pdf" target="_blank" rel="noopener">VIRENA</a>, a platform for controlled experimentation in realistic social media environments. I hold a PhD from the European University Institute. Originally from the Netherlands, I'm a competitive swimmer when I'm not running survey experiments.</p>
+      <div class="links">
+        <a class="s-email" href="mailto:hoes@ipz.uzh.ch" title="Email" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=yDYBSdsAAAAJ&hl=en" class="s-scholar" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2V17c0 1.8 3.1 3.5 7 3.5s7-1.7 7-3.5v-3.8l-7 3.8-7-3.8z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/emmahoes/" class="s-linkedin" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2.01 0-2.32 1.57-2.32 3.2V21H9z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/emmahoes.bsky.social" class="s-bluesky" title="Bluesky" aria-label="Bluesky" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8C10.9 8.5 7.9 4.4 5.1 3 3.4 2.2 2 2.9 2 5c0 1.9 1.1 6.4 1.7 7.1.8.9 2 1.3 4 1.4-2 .3-3.6.9-3.6 3 0 2 1.7 2.6 3 1.1C9.4 16.1 11 13 12 11.3c1 1.7 2.6 4.8 4.9 7.3 1.3 1.5 3 .9 3-1.1 0-2.1-1.6-2.7-3.6-3 2-.1 3.2-.5 4-1.4.6-.7 1.7-5.2 1.7-7.1 0-2.1-1.4-2.8-3.1-2C18.1 4.4 15.1 8.5 14 10.8c-.4.7-.7 1.3-.9 1.6l-.1.2-.1-.2c-.2-.3-.5-.9-.9-1.6z"/></svg>
+        </a>
+        <a href="https://x.com/EmmaHoes93" class="s-x" title="X / Twitter" aria-label="X / Twitter" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.1L8.4 21H5.2l7.5-8.6L4.8 3h6.6l4.5 5.6L17.5 3zm-1.1 16h1.8L7.7 4.8H5.8L16.4 19z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <section id="publications">
+    <div class="eyebrow">Publications</div>
+    <h2>Peer-reviewed</h2>
+
+    <div class="shelf-hint">scroll for paper previews</div>
+    <div class="shelf">
+      <div class="shelf-row">
+
+        <a class="card" href="assets/pdf/hoes-gilardi-existential-risk.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/existential-risk.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">PNAS · forthcoming</div><div class="t">Existential Risk Narratives About AI Do Not Distract From Its Immediate Harms</div></div>
+          </div>
+          <div class="cap">Existential Risk Narratives About AI…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/altay-hoes-wojcieszak-news-social-media.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/news-social-media.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Nature Human Behaviour · 2025</div><div class="t">Following News on Social Media Boosts Knowledge, Belief Accuracy and Trust</div></div>
+          </div>
+          <div class="cap">Following News on Social Media Boosts Knowledge…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/altay-hoes-wojcieszak-news-replication.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/news-replication.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Int. J. Press/Politics · 2025</div><div class="t">News Informs and Boosts Discernment: A Replication in France and Germany</div></div>
+          </div>
+          <div class="cap">News Informs and Boosts Discernment…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/hoes-misinformation-trust-scientists.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/misinfo-trust-scientists.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Political Behavior · 2025</div><div class="t">(Media Attention to) Misinformation Can Undermine Trust in Scientists</div></div>
+          </div>
+          <div class="cap">(Media Attention to) Misinformation Can Undermine Trust in Scientists</div>
+        </a>
+
+        <a class="card" href="assets/pdf/altay-deangelis-hoes-media-literacy.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/media-literacy-tips.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Comms Psychology · 2024</div><div class="t">Media Literacy Tips Promoting Reliable News Improve Discernment</div></div>
+          </div>
+          <div class="cap">Media Literacy Tips Promoting Reliable News…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/hoes-interventions-skepticism.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/interventions-skepticism.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Nature Human Behaviour · 2024</div><div class="t">Prominent Misinformation Interventions Reduce Misperceptions but Increase Scepticism</div></div>
+          </div>
+          <div class="cap">Prominent Misinformation Interventions…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/marchal-hoes-platform-governance.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/platform-governance.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Political Communication · 2024</div><div class="t">The Role of Media Coverage in Platform Policy Change</div></div>
+          </div>
+          <div class="cap">The Role of Media Coverage in Platform Policy Change</div>
+        </a>
+
+      </div>
+    </div>
+
+    <p class="note">* denotes equal contribution</p>
+
+    <div class="pub"><strong>Hoes, E.</strong> &amp; Gilardi, F.* <a href="assets/pdf/hoes-gilardi-existential-risk.pdf" target="_blank" rel="noopener">Existential Risk Narratives About Artificial Intelligence Do Not Distract From Its Immediate Harms.</a> <span class="venue">PNAS</span> <span class="tag fc">forthcoming</span></div>
+
+    <div class="pub"><span class="year">2025</span>Altay, S., <strong>Hoes, E.</strong>, &amp; Wojcieszak, M. <a href="assets/pdf/altay-hoes-wojcieszak-news-social-media.pdf" target="_blank" rel="noopener">Following News on Social Media Boosts Knowledge, Belief Accuracy, and Trust.</a> <span class="venue">Nature Human Behaviour</span>.</div>
+
+    <div class="pub"><span class="year">2025</span><strong>Hoes, E.</strong>, Clemm von Hohenberg, B., Gessler, T., Qian, S., &amp; Wojcieszak, M. <a href="assets/pdf/hoes-misinformation-trust-scientists.pdf" target="_blank" rel="noopener">(Media Attention to) Misinformation Can Undermine Trust in Scientists.</a> <span class="venue">Political Behavior</span>.</div>
+
+    <div class="pub"><span class="year">2025</span>Altay, S., <strong>Hoes, E.</strong>, &amp; Wojcieszak, M. <a href="assets/pdf/altay-hoes-wojcieszak-news-replication.pdf" target="_blank" rel="noopener">News Informs and Boosts Discernment: A Replication in France and Germany</a>. <span class="venue">International Journal of Press/Politics</span>.</div>
+
+    <div class="pub"><span class="year">2024</span>Altay, S., de Angelis, A., &amp; <strong>Hoes, E.</strong>* <a href="assets/pdf/altay-deangelis-hoes-media-literacy.pdf" target="_blank" rel="noopener">Media Literacy Tips Promoting Reliable News Improve Discernment and Enhance Trust in Traditional Media.</a> <span class="venue">Communications Psychology</span>, 2(74).</div>
+
+    <div class="pub"><span class="year">2024</span><strong>Hoes, E.</strong>, Aitken, B., Gackowski, T., Zhang, J., &amp; Wojcieszak, M. <a href="assets/pdf/hoes-interventions-skepticism.pdf" target="_blank" rel="noopener">Prominent Misinformation Interventions Reduce Misperceptions but Increase Scepticism.</a> <span class="venue">Nature Human Behaviour</span>, 1–9.</div>
+
+    <div class="pub"><span class="year">2024</span>Marchal, N., <strong>Hoes, E.</strong>, Klüser, K. J., Hamborg, F., Katzenbach, C., Alizadeh, M., &amp; Kubli, M. <a href="assets/pdf/marchal-hoes-platform-governance.pdf" target="_blank" rel="noopener">The Role of Media Coverage in Platform Policy Change.</a> <span class="venue">Political Communication</span>, 1–19.</div>
+
+    <div class="pub"><span class="year">2024</span>Nasr, M. &amp; <strong>Hoes, E.</strong> <a href="assets/pdf/nasr-hoes-policy-uturns.pdf" target="_blank" rel="noopener">The Times They Are A-Changin': An Experimental Assessment of the Causes and Consequences of Sudden Policy U-turns.</a> <span class="venue">European Journal of Political Research</span>, 63, 1655–1673.</div>
+
+    <div class="pub"><span class="year">2023</span>Alizadeh, M., <strong>Hoes, E.</strong>, &amp; Gilardi, F.* <a href="assets/pdf/alizadeh-hoes-gilardi-tokenization.pdf" target="_blank" rel="noopener">Tokenization of Social Media Engagements Increases the Sharing of False (and Other) News but Penalization Moderates It.</a> <span class="venue">Scientific Reports</span>, 13.</div>
+
+    <div class="pub"><span class="year">2023</span><strong>Hoes, E.</strong>, Kamphorst, J., &amp; Krouwel, A. <a href="assets/pdf/hoes-prominence-proximity.pdf" target="_blank" rel="noopener">Prominence over Proximity? Terror Attacks' Impact on Party Preferences.</a> <span class="venue">European Political Science Review</span>, 16, 112–130.</div>
+
+    <div class="pub"><span class="year">2022</span>Alizadeh, M., Gilardi, F., <strong>Hoes, E.</strong>, Klüser, K. J., Kubli, M., &amp; Marchal, N.* <a href="assets/pdf/alizadeh-content-moderation-trump.pdf" target="_blank" rel="noopener">Content Moderation as a Political Issue: The Twitter Discourse Around Trump's Ban.</a> <span class="venue">Journal of Quantitative Description: Digital Media</span>, 2.</div>
+  </section>
+
+
+  <section id="chapters">
+    <div class="eyebrow">Book chapters</div>
+    <h2>Book chapters</h2>
+
+    <div class="pub"><span class="year">2027</span><strong>Hoes, E.</strong> Trust Erosion in the Digital Age. In M. M. Torres (Ed.), <span class="venue">Public Trust in Institutions: Qualitative and Quantitative Perspectives</span>. Elsevier. <span class="tag">forthcoming</span></div>
+
+    <div class="pub"><span class="year">2022</span><strong>Hoes, E.</strong> De Media en Politieke Polarisatie: De Rol van Ons Gedrag. In P. Dekker (Ed.), <span class="venue">Politieke Polarisatie in Nederland</span> (Ch. 9). Het Wereldvenster.</div>
+  </section>
+
+  <section id="working">
+    <div class="eyebrow">Working papers</div>
+    <h2>In progress &amp; under review</h2>
+
+    <div class="shelf-hint">scroll for working-paper previews</div>
+    <div class="shelf">
+      <div class="shelf-row">
+
+        <a class="card" href="assets/pdf/hoes-klueser-influencers.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/influencers.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">working paper</div><div class="t">(Dis)information for Hire? Influencers and Misinformation</div></div>
+          </div>
+          <div class="cap">(Dis)information for Hire?…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/klueser-hoes-deepfakes.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/deepfakes.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">working paper</div><div class="t">AI-Generated Explicit Deepfakes Damage Politicians' Perceived Competence</div></div>
+          </div>
+          <div class="cap">AI-Generated Explicit Deepfakes…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/virena.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/virena.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">working paper</div><div class="t">VIRENA: Virtual Arena for Research, Education, and Democratic Innovation</div></div>
+          </div>
+          <div class="cap">VIRENA: Virtual Arena for Research…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/kubli-hoes-umansky-blackbox.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/blackbox.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">working paper</div><div class="t">The Blackbox of Social Media Content Moderation</div></div>
+          </div>
+          <div class="cap">The Blackbox of Social Media Content Moderation</div>
+        </a>
+
+        <a class="card" href="assets/pdf/hoes-altay-debriefing.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/debriefing.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">under review</div><div class="t">Debriefings in Misinformation Research Should Include Fact-Checks</div></div>
+          </div>
+          <div class="cap">Debriefings in Misinformation Research…</div>
+        </a>
+
+        <a class="card" href="assets/pdf/hoes-altay-chatgpt-factchecking.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/chatgpt-factcheck.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">working paper</div><div class="t">Leveraging ChatGPT for Efficient Fact-Checking</div></div>
+          </div>
+          <div class="cap">Leveraging ChatGPT for Efficient Fact-Checking</div>
+        </a>
+
+        <a class="card" href="assets/pdf/hoes-media-literacy-did.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/media-literacy-did.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">working paper</div><div class="t">The Effect of a Real-World, Long-Term Media Literacy Intervention</div></div>
+          </div>
+          <div class="cap">The Effect of a Real-World, Long-Term Media Literacy Intervention</div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="pub"><a href="assets/pdf/hoes-klueser-influencers.pdf" target="_blank" rel="noopener"><strong>(Dis)information for Hire? Dispelling Exaggerated Concerns about Social Media Influencers' Role in Spreading Misinformation</strong></a> — with K. Jonathan Klüser</div>
+
+    <div class="pub"><a href="assets/pdf/klueser-hoes-deepfakes.pdf" target="_blank" rel="noopener"><strong>AI-Generated Explicit Deepfakes Damage Politicians' Perceived Leadership Competence, Trustworthiness and Electoral Prospects</strong></a> — with Sophie Klüser and K. Jonathan Klüser</div>
+
+    <div class="pub"><a href="assets/pdf/virena.pdf" target="_blank" rel="noopener"><strong>VIRENA: Virtual Arena for Research, Education, and Democratic Innovation</strong></a> — with K. Jonathan Klüser and Fabrizio Gilardi</div>
+
+    <div class="pub"><a href="assets/pdf/kubli-hoes-umansky-blackbox.pdf" target="_blank" rel="noopener"><strong>The Blackbox of Social Media Content Moderation: A First Look into a Novel Twitter Dataset</strong></a> — with Maël Kubli and Natalia Umansky</div>
+
+    <div class="pub"><a href="assets/pdf/hoes-altay-debriefing.pdf" target="_blank" rel="noopener"><strong>Debriefings in Misinformation Research Should Include Fact-Checks to Reduce False Beliefs and Increase Perceived Learning</strong></a> — with Sacha Altay <span class="tag">under review</span></div>
+
+    <div class="pub"><a href="assets/pdf/hoes-altay-chatgpt-factchecking.pdf" target="_blank" rel="noopener"><strong>Leveraging ChatGPT for Efficient Fact-Checking</strong></a> — with Sacha Altay and Juan Bermeo</div>
+
+    <div class="pub"><a href="assets/pdf/hoes-media-literacy-did.pdf" target="_blank" rel="noopener"><strong>The Effect of a Real-World, Long-Term Media Literacy Intervention: A Difference-in-Differences Approach</strong></a></div>
+  </section>
+
+  <section id="teaching">
+    <div class="eyebrow">Teaching</div>
+    <h2>Teaching &amp; supervision</h2>
+    <div class="row">Experimental Design and Open Science<div class="meta">ECPR Methods School — September 2026</div></div>
+    <div class="row">Seminar: Agenda Setting and Media Framing<div class="meta">Department of Political Science, University of Zurich</div></div>
+    <div class="row">BA and MA thesis supervision<div class="meta">Department of Political Science, University of Zurich</div></div>
+  </section>
+
+  <section id="contact">
+    <div class="eyebrow">Contact</div>
+    <h2>Get in touch</h2>
+    <p class="contact">Email is the best way to reach me: <a href="mailto:hoes@ipz.uzh.ch">hoes@ipz.uzh.ch</a></p>
+    <div class="contact">
+      <div class="addr">
+        Department of Political Science<br>
+        University of Zurich<br>
+        Affolternstrasse 56<br>
+        8050 Zurich, Switzerland
+      </div>
+    </div>
+    <p style="margin-top:22px"><a class="btn" href="assets/docs/CV_Hoes.pdf">Download CV (PDF)</a></p>
+  </section>
+
+</main>
+
+<footer>© 2026 Emma Hoes <span class="amp">·</span> Hosted on GitHub Pages</footer>
+
+</body>
+</html>

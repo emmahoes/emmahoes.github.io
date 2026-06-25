@@ -153,6 +153,14 @@ h2{font-family:var(--display);font-weight:600;font-size:25px;letter-spacing:-.01
 .row{padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
 .row:last-child{border-bottom:none}
 .row .meta{color:var(--muted);font-size:13.5px;margin-top:3px;font-family:var(--mono)}
+.subhead{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-deep);margin:26px 0 4px}
+.subhead:first-of-type{margin-top:6px}
+.crow{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:11px 0;border-bottom:1px dotted var(--line);font-size:15px;align-items:baseline}
+.crow:last-child{border-bottom:none}
+.crow .term{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.crow .what{color:var(--ink)}
+.crow .what .inst{color:var(--muted);font-size:13px}
+.supnote{font-size:15px;color:#2b2f36;padding:12px 0 2px;line-height:1.6}
 
 .btn{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:500;padding:10px 18px;border:1px solid var(--ink);border-radius:4px;color:var(--ink);background:var(--paper-2)}
 .btn:hover{background:var(--ink);color:var(--amber-bright);text-decoration:none}
@@ -193,7 +201,7 @@ footer .amp{color:var(--amber-deep)}
       <div class="kicker">Political Scientist · University of Zurich</div>
       <h1>Emma Hoes</h1>
       <div class="role">Department of Political Science, <a href="https://www.ipz.uzh.ch/en.html">University of Zurich</a></div>
-      <p>I study how digital technologies shape the information ecosystem and, with it, political behavior, trust in institutions, and what citizens come to believe. A current strand looks at content that is harmful but not false and its effects on political attitudes. I'm based at the Department of Political Science at the University of Zurich, with expertise in the design of survey and field experiments. I'm also the lead developer of <a href="assets/pdf/virena.pdf" target="_blank" rel="noopener">VIRENA</a>, a platform for controlled experimentation in realistic social media environments. I hold a PhD from the European University Institute. Originally from the Netherlands, I'm a competitive swimmer when I'm not running survey experiments.</p>
+      <p>I study how digital technologies shape the information ecosystem and, with it, political behavior, trust in institutions, and what citizens come to believe. A current strand looks at content that is harmful but not false and its effects on political attitudes. I'm based at the Department of Political Science at the University of Zurich, with expertise in the design of survey and field experiments. I'm also the lead developer of <a href="assets/pdf/virena.pdf" target="_blank" rel="noopener">VIRENA</a>, a platform for controlled experimentation in realistic social media environments. I hold a PhD from the European University Institute. I'm originally from the Netherlands, and love swimming when I'm not running experiments.</p>
       <div class="links">
         <a class="s-email" href="mailto:hoes@ipz.uzh.ch" title="Email" aria-label="Email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg>
@@ -443,10 +451,25 @@ footer .amp{color:var(--amber-deep)}
 
   <section id="teaching">
     <div class="eyebrow">Teaching</div>
-    <h2>Teaching &amp; supervision</h2>
-    <div class="row">Experimental Design and Open Science<div class="meta">ECPR Methods School — September 2026</div></div>
-    <div class="row">Seminar: Agenda Setting and Media Framing<div class="meta">Department of Political Science, University of Zurich</div></div>
-    <div class="row">BA and MA thesis supervision<div class="meta">Department of Political Science, University of Zurich</div></div>
+    <h2>Teaching, workshops &amp; supervision</h2>
+
+    <div class="subhead">Bachelor courses</div>
+    <div class="crow"><div class="term">'25/'26</div><div class="what">Agenda Setting and the Media: Framing the Political Debate (Bachelor specialisation) <span class="inst">· University of Zurich</span></div></div>
+    <div class="crow"><div class="term">'24/'25</div><div class="what">Agenda Setting and the Media: Framing the Political Debate (Bachelor specialisation) <span class="inst">· University of Zurich</span></div></div>
+
+    <div class="subhead">Master courses</div>
+    <div class="crow"><div class="term">Spring 2026</div><div class="what">(Fake) News &amp; What (Not) To Do About It <span class="inst">· University of Zurich</span></div></div>
+    <div class="crow"><div class="term">Spring 2025</div><div class="what">(Fake) News &amp; What (Not) To Do About It <span class="inst">· University of Zurich</span></div></div>
+    <div class="crow"><div class="term">Spring 2023</div><div class="what">(Fake) News &amp; What (Not) To Do About It <span class="inst">· University of Zurich</span></div></div>
+    <div class="crow"><div class="term">Spring 2022</div><div class="what">(Fake) News &amp; What (Not) To Do About It <span class="inst">· University of Zurich</span></div></div>
+
+    <div class="subhead">Workshops</div>
+    <div class="crow"><div class="term">Sep 2026</div><div class="what">Experimental Design and Open Science <span class="inst">· ECPR Methods School</span></div></div>
+    <div class="crow"><div class="term">Fall 2025</div><div class="what">Digital Skills Workshop: Experimental (Survey) Methods in Social Sciences (Master &amp; PhD) <span class="inst">· University of Lucerne</span></div></div>
+    <div class="crow"><div class="term">Spring 2024</div><div class="what">From Dream to Draft: Converting Ideas to Text with a Compelling Start (PhD) <span class="inst">· University of Zurich</span></div></div>
+
+    <div class="subhead">Supervision</div>
+    <p class="supnote">I supervise students at both the BA and MA level. To date I have supervised 3 MA students and 19 BA students. One of my BA supervisees received the Department of Political Science's <strong>Best Bachelor Thesis</strong> award (University of Zurich, 2025).</p>
   </section>
 
   <section id="contact">

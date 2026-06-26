@@ -70,6 +70,9 @@ nav .brand b{color:var(--amber);font-weight:600}
 nav a{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.01em}
 nav a{border-bottom:none}
 nav a:hover{color:var(--amber-deep);text-decoration:none;border-bottom:none}
+nav a.active{color:var(--amber-deep)}
+nav a.active::after{content:"";display:block;height:2px;background:var(--amber);border-radius:2px;margin-top:3px}
+section[id], header[id]{scroll-margin-top:64px}
 
 /* ---------- HERO (dark band) ---------- */
 .hero-band{
@@ -548,5 +551,28 @@ footer .amp{color:var(--amber-deep)}
 
 <footer>© 2026 Emma Hoes <span class="amp">·</span> Hosted on GitHub Pages</footer>
 
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a[href^="#"]'));
+  var map = links.map(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    return el ? {a:a, el:el} : null;
+  }).filter(Boolean);
+  if(!map.length) return;
+  function onScroll(){
+    var pos = window.scrollY + 80;
+    var current = map[0];
+    for(var i=0;i<map.length;i++){
+      if(map[i].el.offsetTop <= pos) current = map[i];
+    }
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if(current) current.a.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
 </body>
 </html>

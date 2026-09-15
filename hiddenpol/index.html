@@ -11,8 +11,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="HIDDENPOL — The Hidden Politics of Everyday Media">
 <meta property="og:description" content="An ERC Starting Grant project studying how everyday media quietly shape political values and beliefs.">
-<meta property="og:image" content="https://emmahoes.com/hiddenpol/assets/img/og-card.jpg">
+<meta property="og:url" content="https://emmahoes.com/hiddenpol/">
+<meta property="og:image" content="https://emmahoes.com/hiddenpol/assets/img/og-card.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HIDDENPOL — The Hidden Politics of Everyday Media">
+<meta name="twitter:image" content="https://emmahoes.com/hiddenpol/assets/img/og-card.jpg?v=2">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,10 +63,10 @@ nav .brand{display:flex;align-items:center;gap:9px;font-family:var(--disp);font-
 nav .brand b{color:var(--violet);font-weight:700}
 nav .brand svg{display:block}
 nav .links{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:12.5px}
-nav .links a{color:var(--on-dark-mute);border:none}
+nav .links a{position:relative;color:var(--on-dark-mute);border:none}
 nav .links a:hover{color:var(--violet)}
 nav .links a.active{color:var(--violet)}
-nav .links a.active::after{content:"";display:block;height:2px;background:var(--violet);border-radius:2px;margin-top:3px}
+nav .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--violet);border-radius:2px}
 nav .links a.home{color:var(--on-dark)}
 
 .hero{background:var(--dark);color:var(--on-dark);padding:66px 0 64px}
@@ -144,7 +149,7 @@ footer{background:var(--dark);color:var(--on-dark-soft);padding:48px 0 56px}
 <header id="top" class="hero">
   <div class="wrap">
     <div class="kicker">ERC Starting Grant · University of Zurich</div>
-    <h1>The hidden politics of <b>everyday media</b></h1>
+    <h1>The Hidden Politics of <b>Everyday Media</b></h1>
     <div class="meta">
       <span><b>PI</b> &nbsp;Emma Hoes</span>
       <span><b>Funder</b> &nbsp;European Research Council</span>
@@ -263,12 +268,17 @@ footer{background:var(--dark);color:var(--on-dark-soft);padding:48px 0 56px}
 (function(){
   var links = Array.prototype.slice.call(document.querySelectorAll('nav .links a[href^="#"]'));
   var map = links.map(function(a){var el=document.getElementById(a.getAttribute('href').slice(1));return el?{a:a,el:el}:null;}).filter(Boolean);
-  function onScroll(){
-    var pos = window.scrollY + 80, cur = map[0];
-    for(var i=0;i<map.length;i++){ if(map[i].el.offsetTop <= pos) cur = map[i]; }
+  function setActive(item){
     links.forEach(function(a){a.classList.remove('active');});
-    if(cur) cur.a.classList.add('active');
+    if(item) item.a.classList.add('active');
   }
+  function onScroll(){
+    var navH = document.querySelector('nav').offsetHeight, cur = map[0];
+    for(var i=0;i<map.length;i++){ if(map[i].el.getBoundingClientRect().top <= navH + 40) cur = map[i]; }
+    if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = map[map.length-1];
+    setActive(cur);
+  }
+  links.forEach(function(a){ a.addEventListener('click', function(){ setActive(map.filter(function(m){return m.a===a;})[0]); }); });
   window.addEventListener('scroll', onScroll, {passive:true});
   window.addEventListener('resize', onScroll); onScroll();
   document.getElementById('yr').textContent = new Date().getFullYear();

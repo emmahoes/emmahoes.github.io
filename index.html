@@ -1,287 +1,618 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HIDDENPOL — The Hidden Politics of Everyday Media</title>
-<meta name="description" content="HIDDENPOL is an ERC Starting Grant project (PI Emma Hoes, University of Zurich) studying how everyday, seemingly apolitical media shape citizens' political values, beliefs, and orientations.">
-<meta name="keywords" content="HIDDENPOL, ERC Starting Grant, Emma Hoes, political learning, everyday media, social media, politicalness, misinformation, polarization, field experiments, University of Zurich">
-<link rel="icon" href="assets/img/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HIDDENPOL — The Hidden Politics of Everyday Media">
-<meta property="og:description" content="An ERC Starting Grant project studying how everyday media quietly shape political values and beliefs.">
-<meta property="og:url" content="https://emmahoes.com/hiddenpol/">
-<meta property="og:image" content="https://emmahoes.com/hiddenpol/assets/img/og-card.jpg?v=2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma Hoes — Political Scientist & Experimentalist, University of Zurich</title>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta name="author" content="Emma Hoes">
+<meta name="description" content="Emma Hoes is a political scientist and experimentalist at the University of Zurich, studying how digital technologies shape the information ecosystem through survey and field experiments.">
+<meta name="keywords" content="Emma Hoes, political scientist, experimentalist, experimental political science, misinformation, trust, AI, social media, survey experiments, field experiments, VIRENA, University of Zurich, Digital Democracy Lab">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Emma Hoes — Political Scientist & Experimentalist, University of Zurich">
+<meta property="og:description" content="Political scientist and experimentalist at the University of Zurich studying how digital technologies shape the information ecosystem.">
+<meta property="og:url" content="https://emmahoes.com/">
+<meta property="og:image" content="https://emmahoes.com/assets/img/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HIDDENPOL — The Hidden Politics of Everyday Media">
-<meta name="twitter:image" content="https://emmahoes.com/hiddenpol/assets/img/og-card.jpg?v=2">
+<meta name="twitter:title" content="Emma Hoes — Political Scientist & Experimentalist, University of Zurich">
+<meta name="twitter:description" content="Political scientist and experimentalist at the University of Zurich studying how digital technologies shape the information ecosystem.">
+<meta name="twitter:image" content="https://emmahoes.com/assets/img/og-card.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --dark:#1c1526;
-  --dark-2:#261d33;
-  --dark-line:#322842;
-  --on-dark:#e9e4f0;
-  --on-dark-soft:#c9c1d8;
-  --on-dark-mute:#9a8cb5;
-  --violet:#b98cff;
+  /* dark hero palette */
+  --hero-bg:#0e1116;
+  --hero-bg-2:#13171e;
+  --hero-ink:#eef1f4;
+  --hero-muted:#8b94a3;
+  --hero-line:#262c36;
+  /* light document palette */
+  --paper:#fefdf6;
+  --paper-2:#fffef9;
+  --ink:#171a1f;
+  --muted:#646b76;
+  --line:#ece8d8;
+  /* accent */
+  --amber:#ffc400;
+  --amber-bright:#ffd24d;
+  --amber-deep:#caa000;   /* legible amber for links on light bg */
+  --amber-soft:#fff2bf;
 
-  --paper:#fdf9fb;
-  --paper-2:#ffffff;
-  --ink:#2a1030;
-  --ink-soft:#5a4a58;
-  --muted:#8a7686;
-  --line:#ecdfe8;
-  --plum:#8b2f6b;
-  --plum-deep:#6f1f52;
-  --plum-soft:#f6e6f0;
-
-  --serif:'Fraunces',Georgia,serif;
-  --disp:'Space Grotesk',system-ui,sans-serif;
-  --body:'Inter',system-ui,sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --display:"Space Grotesk",system-ui,sans-serif;
+  --wordmark:"Fraunces",Georgia,serif;
+  --body:"Inter",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --maxw:800px;
 }
-*{box-sizing:border-box}
+
+/* ---------- TEXT SELECTION ---------- */
+::selection{background:#ffe066;color:#26231a}
+::-moz-selection{background:#ffe066;color:#26231a}
+
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-::selection{background:#e7b8d8;color:#2a1030}
-.wrap{max-width:1000px;margin:0 auto;padding:0 26px}
-section[id],header[id]{scroll-margin-top:64px}
-a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--plum)}
-a:hover{color:var(--plum-deep)}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.62;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--amber)}
+a:hover{text-decoration:underline;text-underline-offset:2px}
 
-nav{position:sticky;top:0;z-index:50;background:rgba(28,21,38,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--dark-line)}
-nav .inner{max-width:1000px;margin:0 auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-nav .brand{display:flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.01em;color:#f3edfa;border:none}
-nav .brand b{color:var(--violet);font-weight:700}
-nav .brand svg{display:block}
-nav .links{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:12.5px}
-nav .links a{position:relative;color:var(--on-dark-mute);border:none}
-nav .links a:hover{color:var(--violet)}
-nav .links a.active{color:var(--violet)}
-nav .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--violet);border-radius:2px}
-nav .links a.home{color:var(--on-dark)}
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(254,253,246,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;flex-wrap:nowrap;gap:20px;align-items:center;justify-content:space-between}
+nav .brand{font-family:var(--wordmark);font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1;flex:0 0 auto;white-space:nowrap}
+nav .brand b{color:var(--amber);font-weight:600}
+nav a{position:relative;font-family:var(--mono);font-size:12px;line-height:1.4;color:var(--muted);letter-spacing:0;border-bottom:none;white-space:nowrap}
+nav a:hover{color:var(--amber-deep);text-decoration:none;border-bottom:none}
+nav a.active{color:var(--amber-deep)}
+/* underline floats below the link, so it never shifts the row */
+nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--amber);border-radius:2px}
+.navlinks{display:flex;flex-wrap:nowrap;gap:14px;align-items:center;justify-content:flex-end;flex:0 1 auto}
+nav a.proj{display:inline-flex;align-items:center;gap:5px;color:var(--ink)}
+nav a.proj:hover{color:var(--ink);text-decoration:none;border-bottom:none}
+nav a.proj svg{display:block;flex:0 0 auto}
+nav a.proj .wm{font-family:var(--wordmark);font-size:14px;font-weight:600;letter-spacing:-.01em;line-height:1;color:#3a1030}
+nav a.proj .wm b{color:#8b2f6b;font-weight:600}
+nav a.proj:hover .wm b{color:#6f1f52}
+section[id], header[id]{scroll-margin-top:60px}
 
-.hero{background:var(--dark);color:var(--on-dark);padding:66px 0 64px}
-.hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);margin-bottom:22px}
-.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.6vw,60px);line-height:1.02;letter-spacing:-.015em;margin:0;color:#fff}
-.hero h1 b{color:var(--violet);font-weight:700}
-.hero .meta{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--on-dark-mute)}
-.hero .meta b{color:var(--on-dark);font-weight:600}
-
-.section{padding:56px 0;border-top:1px solid var(--line)}
-.section:first-of-type{border-top:none}
-.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--plum-deep);display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.eyebrow::before{content:"";width:20px;height:3px;background:var(--plum);border-radius:2px}
-h2{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.4vw,34px);letter-spacing:-.01em;margin:0 0 22px;color:var(--ink)}
-h3{font-family:var(--disp);font-weight:600;font-size:19px;margin:0 0 6px;color:var(--ink)}
-
-.about p{max-width:70ch;color:var(--ink-soft);margin:0 0 18px}
-.about p .hl{color:var(--ink);font-weight:600}
-
-.stat-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
-.stat{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:20px 22px;flex:1 1 210px;display:flex;gap:15px;align-items:flex-start}
-.stat .ic{flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:var(--plum-soft);display:flex;align-items:center;justify-content:center;color:var(--plum-deep);margin-top:2px}
-.stat .n{font-family:var(--disp);font-weight:700;font-size:24px;color:var(--plum-deep);line-height:1.05}
-.stat .l{font-size:14px;color:var(--muted);margin-top:5px;line-height:1.4}
-
-.wps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}
-.wp{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
-.wp .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--plum-deep);background:var(--plum-soft);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px}
-.wp p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.5}
-
-.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;margin-top:10px}
-.person{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:24px}
-.person.tbd{border-style:dashed;background:var(--paper);display:flex;flex-direction:column;justify-content:center}
-.person .avatar{width:60px;height:60px;border-radius:50%;background:var(--plum-soft);color:var(--plum-deep);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:22px;margin-bottom:14px;overflow:hidden}
-.person .avatar img{width:100%;height:100%;object-fit:cover}
-.person .role{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--plum-deep);margin-top:2px}
-.person p{font-size:14px;color:var(--muted);margin:10px 0 0;line-height:1.5}
-.person .lk{margin-top:12px;font-family:var(--mono);font-size:12px}
-
-.pos-intro{color:var(--ink-soft);max-width:70ch;margin:0 0 24px}
-.position{background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--plum);border-radius:12px;padding:22px 26px;margin-bottom:14px}
-.position .head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-.position .status{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--plum-deep);background:var(--plum-soft);border-radius:20px;padding:4px 12px;white-space:nowrap}
-.position p{color:var(--ink-soft);margin:12px 0 0;font-size:15px;max-width:70ch;line-height:1.55}
-.position .apply{margin-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted)}
-
-footer{background:var(--dark);color:var(--on-dark-soft);padding:48px 0 56px}
-.fund{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
-.fund img{height:78px;width:auto;background:#fff;border-radius:8px;padding:8px}
-.fund .txt{font-size:13.5px;color:var(--on-dark-mute);max-width:54ch;line-height:1.55}
-.foot-meta{margin-top:30px;padding-top:22px;border-top:1px solid var(--dark-line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--on-dark-mute)}
-.foot-meta a{color:var(--on-dark);border:none}
-.foot-meta a:hover{color:var(--violet)}
-
-@media (max-width:600px){
-  body{font-size:16px}
-  .hero{padding:46px 0 44px}
-  nav .links{gap:14px;font-size:11.5px}
+/* ---------- HERO ---------- */
+.hero-band{
+  background:var(--paper);
+  background-image:radial-gradient(900px 380px at 82% -20%, rgba(245,166,35,.10), transparent 70%);
+  border-bottom:1px solid var(--line);
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.hero{max-width:var(--maxw);margin:0 auto;padding:60px 24px 54px;display:grid;grid-template-columns:148px 1fr;gap:38px;align-items:start}
+.hero img{width:148px;height:148px;border-radius:4px;object-fit:cover;background:var(--paper-2);border:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9a7a00;margin-bottom:14px}
+.hero h1{font-family:var(--display);font-weight:600;font-size:46px;line-height:1;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px}
+.hero .role{font-size:15.5px;color:var(--muted);margin-bottom:20px}
+.hero .role a{color:var(--ink);border-bottom:2px solid var(--amber);text-decoration:none}
+.hero .role a:hover{color:var(--amber-deep)}
+.hero p{font-size:16px;color:#2b2f36;margin-bottom:20px;max-width:54ch}
+.hero p a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--amber)}
+.hero p a:hover{border-color:var(--amber-deep)}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{border-bottom:none;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:var(--paper-2);transition:border-color .15s,transform .15s,box-shadow .15s}
+.links a:hover{text-decoration:none;transform:translateY(-2px)}
+.links a svg{width:19px;height:19px;display:block}
+.links a.s-email{color:var(--amber-deep)}
+.links a.s-email:hover{border-color:var(--amber);box-shadow:0 5px 14px rgba(255,196,0,.30)}
+.links a.s-scholar{color:#4285f4}
+.links a.s-scholar:hover{border-color:#4285f4;box-shadow:0 5px 14px rgba(66,133,244,.20)}
+.links a.s-linkedin{color:#0a66c2}
+.links a.s-linkedin:hover{border-color:#0a66c2;box-shadow:0 5px 14px rgba(10,102,194,.20)}
+.links a.s-bluesky{color:#1185fe}
+.links a.s-bluesky:hover{border-color:#1185fe;box-shadow:0 5px 14px rgba(17,133,254,.20)}
+.links a.s-x{color:#111}
+.links a.s-x:hover{border-color:#111;box-shadow:0 5px 14px rgba(0,0,0,.18)}
+.links a.s-cv{color:var(--amber-deep)}
+.links a.s-cv:hover{border-color:var(--amber);box-shadow:0 5px 14px rgba(255,196,0,.30)}
+
+
+/* ---------- PDF SCROLL STRIP ---------- */
+.shelf{margin:0 -24px 20px;padding:30px 24px 30px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.shelf::-webkit-scrollbar{height:8px}
+.shelf::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+.shelf::-webkit-scrollbar-thumb:hover{background:#c9ccd1}
+.shelf-row{display:flex;gap:16px;width:max-content}
+.card{border-bottom:none;scroll-snap-align:start;width:150px;flex:0 0 auto;text-decoration:none;color:inherit;transition:transform .22s cubic-bezier(.2,.7,.3,1);transform-origin:center center;will-change:transform}
+.card:hover{text-decoration:none;transform:scale(1.15);z-index:3;position:relative}
+.card .thumb{
+  width:150px;height:194px;border:1px solid var(--line);border-radius:4px;
+  background:var(--paper-2);overflow:hidden;position:relative;
+  display:flex;align-items:flex-end;
+  box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+.card .thumb{transition:border-color .2s, box-shadow .25s}
+.card:hover .thumb{border-color:var(--amber);box-shadow:0 10px 26px rgba(255,196,0,.28)}
+.card:hover .thumb img{transform:scale(1.08)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.card .thumb .ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
+  padding:12px;font-family:var(--mono);
+}
+.card .thumb .ph .v{font-size:10px;letter-spacing:.04em;color:var(--amber-deep);text-transform:uppercase}
+.card .thumb .ph .t{font-size:11px;line-height:1.3;color:#3a3f47;font-weight:500}
+.card .thumb .corner{position:absolute;top:0;right:0;border-width:0 18px 18px 0;border-style:solid;border-color:transparent var(--amber) transparent transparent;opacity:.9}
+.card .cap{border-bottom:none;font-family:var(--mono);font-size:10.5px;line-height:1.35;color:var(--amber-deep);margin-top:8px;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card:hover .cap{color:var(--amber)}
+.shelf-hint{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin:-2px 0 14px;letter-spacing:.02em}
+.shelf-hint::before{content:"⇆ ";color:var(--amber-deep)}
+
+/* ---------- DOCUMENT BODY ---------- */
+main{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:46px 0;border-bottom:1px solid var(--line)}
+section:last-child{border-bottom:none}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--amber);display:inline-block}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{font-family:var(--display);font-weight:600;font-size:25px;letter-spacing:-.01em;margin-bottom:14px}
+
+.note{color:var(--muted);font-size:13px;margin-bottom:8px;font-family:var(--mono)}
+
+.pub{padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:1.55}
+.pub:last-child{border-bottom:none}
+.pub .year{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber-deep);margin-right:8px}
+.pub .venue{font-style:italic;color:#2b2f36}
+.pub strong{font-weight:600}
+.pub .tag{font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--amber-deep);border:1px solid var(--amber);border-radius:3px;padding:2px 6px;margin-left:6px;white-space:nowrap;background:var(--amber-soft)}
+.pub .tag.fc{color:var(--amber-deep);border-color:var(--amber);background:var(--amber-soft)}
+
+.row{padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.row:last-child{border-bottom:none}
+.row .meta{color:var(--muted);font-size:13.5px;margin-top:3px;font-family:var(--mono)}
+.subhead{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-deep);margin:26px 0 4px}
+.subhead:first-of-type{margin-top:6px}
+.crow{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:11px 0;border-bottom:1px dotted var(--line);font-size:15px;align-items:baseline}
+.crow:last-child{border-bottom:none}
+.crow .term{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.crow .what{color:var(--ink)}
+.crow .what .inst{color:var(--muted);font-size:13px}
+.trow{padding:12px 0;border-bottom:1px dotted var(--line)}
+.trow:last-of-type{border-bottom:none}
+.trow .ttl{font-size:15px;color:var(--ink)}
+.trow .ttl .inst{color:var(--muted);font-size:13px}
+.trow .yrs{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
+.trow .yrs b{color:var(--amber-deep);font-weight:500}
+.supnote{font-size:15px;color:#2b2f36;padding:12px 0 2px;line-height:1.6}
+
+.btn{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:500;padding:10px 18px;border:1px solid var(--ink);border-radius:4px;color:var(--ink);background:var(--paper-2)}
+.btn:hover{background:var(--ink);color:var(--amber-bright);text-decoration:none}
+
+.contact{font-size:15.5px;color:#2b2f36}
+.contact .addr{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.75;margin-top:10px}
+
+footer{max-width:var(--maxw);margin:0 auto;padding:26px 24px 52px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+footer .amp{color:var(--amber-deep)}
+
+/* narrower screens: allow the nav to wrap onto two rows */
+@media(max-width:820px){
+  nav .inner{flex-wrap:wrap;row-gap:10px}
+  .navlinks{flex-wrap:wrap;row-gap:10px;justify-content:flex-start}
+}
+@media(max-width:560px){
+  .hero{grid-template-columns:1fr;gap:24px;padding:48px 24px 44px}
+  .hero img{width:116px;height:116px}
+  .hero h1{font-size:36px}
+  nav .brand{width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="inner">
-    <span class="brand">
-      <svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><line x1="1" y1="11" x2="21" y2="11" stroke="#7c5fa8" stroke-width="1" stroke-dasharray="2 2"/><path d="M11 2 L15 11 L7 11 Z" fill="#b98cff"/><path d="M7 11 L15 11 L18 21 L4 21 Z" fill="#b98cff" opacity="0.3"/></svg>
-      <span class="wm">HIDDEN<b>POL</b></span>
-    </span>
-    <div class="links">
+    <span class="brand">Emma <b>H</b>oes</span>
+    <div class="navlinks">
       <a href="#about">About</a>
-      <a href="#team">Team</a>
-      <a href="#positions">Positions</a>
-      <a class="home" href="https://emmahoes.com">Emma Hoes ↗</a>
+      <a href="#publications">Publications</a>
+      <a href="#chapters">Chapters</a>
+      <a href="#working">Working papers</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/docs/CV_Hoes.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="proj" href="/hiddenpol/" title="HIDDENPOL — ERC project">
+        <svg width="14" height="15" viewBox="0 0 22 24" aria-hidden="true"><line x1="1" y1="11" x2="21" y2="11" stroke="#b98cff" stroke-width="1.2" stroke-dasharray="2 2"/><path d="M11 2 L15 11 L7 11 Z" fill="#8b2f6b"/><path d="M7 11 L15 11 L18 21 L4 21 Z" fill="#8b2f6b" opacity="0.32"/></svg>
+        <span class="wm">HIDDEN<b>POL</b></span>
+      </a>
     </div>
   </div>
 </nav>
 
-<header id="top" class="hero">
-  <div class="wrap">
-    <div class="kicker">ERC Starting Grant · University of Zurich</div>
-    <h1>The Hidden Politics of <b>Everyday Media</b></h1>
-    <div class="meta">
-      <span><b>PI</b> &nbsp;Emma Hoes</span>
-      <span><b>Funder</b> &nbsp;European Research Council</span>
-      <span><b>Duration</b> &nbsp;Jan 2027 – 2031 (60 months)</span>
-      <span><b>Panel</b> &nbsp;SH3</span>
-      <span><b>Funding</b> &nbsp;€2.3M</span>
-    </div>
-  </div>
-</header>
-
-<section id="about" class="section about">
-  <div class="wrap">
-    <div class="eyebrow">About the project</div>
-    <h2>Abstract</h2>
-
-    <p>Scholars overwhelmingly study the consequences of political content, yet this material makes up only <span class="hl">3% of what people encounter online</span>. The remaining 97% is everyday content such as entertainment, blogs, lifestyle sites and social media influencers. HIDDENPOL argues that this widely consumed content can have important political consequences for citizens' values, beliefs, and orientations. If this is the case, then both research and policy are missing the very content that may be driving today's democratic challenges, such as rising misperceptions, polarization, and declining trust.</p>
-
-    <p>I argue that media effects depend not only on content's political properties, but on how these are perceived and processed. Explicitly political content often triggers defense mechanisms (skepticism, counterarguing, reinforcement), limiting its impact. Everyday content, in contrast, embeds <span class="hl">'hidden' political cues</span> (e.g., a cooking show featuring only women). When unrecognized, these cues may bypass defenses and quietly shape orientations. HIDDENPOL theorizes that such under-recognition explains why the overlooked 97% may be politically consequential and introduces <span class="hl">politicalness</span> as the concept that explains when everyday content becomes politically meaningful.</p>
-
-    <p>HIDDENPOL pursues four goals: it develops a new framework for understanding how media shape values and beliefs (WP1); classifies online content from Instagram, TikTok, YouTube, and websites in the Netherlands, Spain, and the United States (WP2); examines how audiences perceive this content and how perceptions evolve (WP3); and tests causal effects with survey- (WP4a) and field-experiments (WP4b).</p>
-
-    <p>The results will reorient media-effects theory and reveal whether current responses to democratic challenges — fact-checking, media literacy, regulation — are too narrowly targeted, leaving potentially powerful but overlooked drivers of change in citizens' values and beliefs unchecked.</p>
-
-    <div class="stat-row">
-      <div class="stat">
-        <div class="ic">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c0-1.5 3.6-2.5 8-2.5s8 1 8 2.5-3.6 2.5-8 2.5S4 8.5 4 7Z"/><path d="M4 7v10c0 1.5 3.6 2.5 8 2.5s8-1 8-2.5V7"/><path d="M4 12c0 1.5 3.6 2.5 8 2.5s8-1 8-2.5"/></svg>
-        </div>
-        <div><div class="n">97%</div><div class="l">of online content is everyday, not explicitly political</div></div>
-      </div>
-      <div class="stat">
-        <div class="ic">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/><path d="M12 3.2a15 15 0 0 0 0 17.6M12 3.2a15 15 0 0 1 0 17.6"/></svg>
-        </div>
-        <div><div class="n">3 countries</div><div class="l">Netherlands · Spain · United States</div></div>
-      </div>
-      <div class="stat">
-        <div class="ic">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M8 20h8M12 16.5V20"/></svg>
-        </div>
-        <div><div class="n">4 platforms</div><div class="l">Instagram · TikTok · YouTube · websites</div></div>
+<div class="hero-band">
+  <header class="hero" id="about">
+    <img src="assets/img/profile.jpg" alt="Emma Hoes">
+    <div>
+      <div class="kicker">Political Scientist &amp; Experimentalist · University of Zurich</div>
+      <h1>Emma Hoes</h1>
+      <div class="role">Department of Political Science, <a href="https://www.ipz.uzh.ch/en.html">University of Zurich</a></div>
+      <p>I study how digital technologies shape the information ecosystem and, with it, political behavior, trust in institutions, and what citizens come to believe. A current strand examines how online lifestyle content can persuade and shape political attitudes. I'm based at the Department of Political Science at the University of Zurich, with expertise in the design of survey and field experiments. I'm also the lead developer of <a href="assets/pdf/virena.pdf" target="_blank" rel="noopener">VIRENA</a>, a platform for controlled experimentation in realistic social media environments.</p>
+      <p>In January 2027 I start as an Assistant Professor in the same department, where I will lead <a href="/hiddenpol/">HIDDENPOL</a>, my ERC Starting Grant on the politics hidden in everyday media, running through 2031. More about the project and the positions I will be hiring for can be found on the <a href="/hiddenpol/">project page</a>.</p>
+      <p>I hold a PhD from the European University Institute (2021). I'm originally from the Netherlands, and love swimming when I'm not running experiments.</p>
+      <div class="links">
+        <a class="s-email" href="mailto:hoes@ipz.uzh.ch" title="Email" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=yDYBSdsAAAAJ&hl=en" class="s-scholar" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2V17c0 1.8 3.1 3.5 7 3.5s7-1.7 7-3.5v-3.8l-7 3.8-7-3.8z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/emmahoes/" class="s-linkedin" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2.01 0-2.32 1.57-2.32 3.2V21H9z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/emmahoes.bsky.social" class="s-bluesky" title="Bluesky" aria-label="Bluesky" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8C10.9 8.5 7.9 4.4 5.1 3 3.4 2.2 2 2.9 2 5c0 1.9 1.1 6.4 1.7 7.1.8.9 2 1.3 4 1.4-2 .3-3.6.9-3.6 3 0 2 1.7 2.6 3 1.1C9.4 16.1 11 13 12 11.3c1 1.7 2.6 4.8 4.9 7.3 1.3 1.5 3 .9 3-1.1 0-2.1-1.6-2.7-3.6-3 2-.1 3.2-.5 4-1.4.6-.7 1.7-5.2 1.7-7.1 0-2.1-1.4-2.8-3.1-2C18.1 4.4 15.1 8.5 14 10.8c-.4.7-.7 1.3-.9 1.6l-.1.2-.1-.2c-.2-.3-.5-.9-.9-1.6z"/></svg>
+        </a>
+        <a href="https://x.com/EmmaHoes93" class="s-x" title="X / Twitter" aria-label="X / Twitter" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.1L8.4 21H5.2l7.5-8.6L4.8 3h6.6l4.5 5.6L17.5 3zm-1.1 16h1.8L7.7 4.8H5.8L16.4 19z"/></svg>
+        </a>
+        <a href="assets/docs/CV_Hoes.pdf" class="s-cv" title="Download CV" aria-label="Download CV" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V7.5z"/><path d="M14 2.5V8h5"/><path d="M8.5 13h7M8.5 16.5h7M8.5 9.5h2"/></svg>
+        </a>
       </div>
     </div>
+  </header>
+</div>
 
-    <div class="wps">
-      <div class="wp"><span class="tag">WP1</span><p>A new framework for how media shape values and beliefs.</p></div>
-      <div class="wp"><span class="tag">WP2</span><p>Classifying online content across platforms and countries.</p></div>
-      <div class="wp"><span class="tag">WP3</span><p>How audiences perceive this content, and how perceptions evolve.</p></div>
-      <div class="wp"><span class="tag">WP4</span><p>Testing causal effects with survey and field experiments.</p></div>
-    </div>
-  </div>
-</section>
+<main>
 
-<section id="team" class="section">
-  <div class="wrap">
-    <div class="eyebrow">Team</div>
-    <h2>People</h2>
-    <div class="people">
-      <div class="person">
-        <div class="avatar"><img src="assets/img/emma.jpg" alt="Emma Hoes"></div>
-        <h3>Emma Hoes</h3>
-        <div class="role">Principal Investigator</div>
-        <p>Political scientist and experimentalist at the University of Zurich, studying how digital technologies shape the information ecosystem.</p>
-        <div class="lk"><a href="https://emmahoes.com">emmahoes.com ↗</a></div>
+  <section id="publications">
+    <div class="eyebrow">Publications</div>
+    <h2>Peer-reviewed</h2>
+
+    <div class="shelf-hint">scroll for paper previews</div>
+    <div class="shelf">
+      <div class="shelf-row">
+
+        <a class="card" href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/debriefings-in-misinformation-research-should-include-factchecks-to-correct-misperceptions-and-increase-perceived-learning/F1A46ABFE0132333B187FC4F70E1AA54" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/debriefing-psrm.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">PSRM · 2026</div><div class="t">Debriefings in Misinformation Research Should Include Fact-Checks</div></div>
+          </div>
+          <div class="cap">PSRM</div>
+        </a>
+
+        <a class="card" href="https://www.nature.com/articles/s41598-026-58743-0" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/ai-news.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Scientific Reports · 2026</div><div class="t">Quality Perceptions and Intended Engagement in Response to AI-Generated and AI-Assisted News</div></div>
+          </div>
+          <div class="cap">Scientific Reports</div>
+        </a>
+
+        <a class="card" href="https://link.springer.com/article/10.1007/s11109-025-10090-y" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/misinfo-trust-scientists.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Political Behavior · 2025</div><div class="t">(Media Attention to) Misinformation Can Undermine Trust in Scientists</div></div>
+          </div>
+          <div class="cap">Political Behavior</div>
+        </a>
+
+        <a class="card" href="https://journals.sagepub.com/doi/10.1177/19401612251378969" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/news-replication.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Int. J. Press/Politics · 2025</div><div class="t">News Informs and Boosts Discernment: A Replication in France and Germany</div></div>
+          </div>
+          <div class="cap">Int. J. Press/Politics</div>
+        </a>
+
+        <a class="card" href="https://www.pnas.org/doi/full/10.1073/pnas.2419055122" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/existential-risk.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">PNAS · 2025</div><div class="t">Existential Risk Narratives About AI Do Not Distract From Its Immediate Harms</div></div>
+          </div>
+          <div class="cap">PNAS</div>
+        </a>
+
+        <a class="card" href="https://www.nature.com/articles/s41562-025-02205-6" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/news-social-media.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Nature Human Behaviour · 2025</div><div class="t">News on Social Media Boosts Knowledge, Belief Accuracy, and Trust</div></div>
+          </div>
+          <div class="cap">Nature Human Behaviour</div>
+        </a>
+
+        <a class="card" href="https://www.nature.com/articles/s44271-024-00121-5" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/media-literacy-tips.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Comms Psychology · 2024</div><div class="t">Media Literacy Tips Promoting Reliable News Improve Discernment</div></div>
+          </div>
+          <div class="cap">Comms Psychology</div>
+        </a>
+
+        <a class="card" href="https://www.nature.com/articles/s41562-024-01884-x" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/interventions-skepticism.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Nature Human Behaviour · 2024</div><div class="t">Prominent Misinformation Interventions Reduce Misperceptions but Increase Skepticism</div></div>
+          </div>
+          <div class="cap">Nature Human Behaviour</div>
+        </a>
+
+        <a class="card" href="https://www.tandfonline.com/doi/full/10.1080/10584609.2024.2377992" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/platform-governance.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Political Communication · 2024</div><div class="t">The Role of Media Coverage in Platform Policy Change</div></div>
+          </div>
+          <div class="cap">Political Communication</div>
+        </a>
+
+        <a class="card" href="https://ejpr.onlinelibrary.wiley.com/doi/10.1111/1475-6765.12650" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/policy-uturns.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Eur. J. Political Research · 2023</div><div class="t">The Times They Are A-Changing: Causes and Consequences of Sudden Policy U-turns</div></div>
+          </div>
+          <div class="cap">Eur. J. Political Research</div>
+        </a>
+
+        <a class="card" href="https://www.nature.com/articles/s41598-023-40716-2" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/tokenization.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Scientific Reports · 2023</div><div class="t">Tokenization of Social Media Engagements Increases Sharing of False News</div></div>
+          </div>
+          <div class="cap">Scientific Reports</div>
+        </a>
+
+        <a class="card" href="https://doi.org/10.1017/S175577392300019X" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/prominence-proximity.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">Eur. Political Science Review · 2023</div><div class="t">Prominence over Proximity? Terror Attacks and Party Preferences</div></div>
+          </div>
+          <div class="cap">Eur. Political Science Review</div>
+        </a>
+
+        <a class="card" href="https://doi.org/10.51685/jqd.2022.023" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/content-moderation-trump.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">J. Quantitative Description · 2022</div><div class="t">Content Moderation as a Political Issue: The Discourse Around Trump's Ban</div></div>
+          </div>
+          <div class="cap">J. Quantitative Description</div>
+        </a>
+
       </div>
-      <div class="person tbd">
-        <h3 style="color:var(--muted)">Joining soon</h3>
-        <p>A postdoctoral researcher and research assistants will join the team from 2027. See open positions below.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="positions" class="section">
-  <div class="wrap">
-    <div class="eyebrow">Join the team</div>
-    <h2>Open positions</h2>
-    <p class="pos-intro">HIDDENPOL is building its team for the project start in January 2027. Calls for the positions below will open soon. If you're interested, feel free to reach out ahead of time.</p>
-
-    <div class="position">
-      <div class="head">
-        <h3>Research Assistants (BA / MA)</h3>
-        <span class="status">Call out soon</span>
-      </div>
-      <p>Part-time positions supporting the project's data collection and content-classification work across the Netherlands, Spain, and the United States. A good fit for students interested in political communication, computational methods, and experimental research. Speaking Dutch and/or Spanish is a plus.</p>
-      <div class="apply">Call expected shortly</div>
     </div>
 
-    <div class="position">
-      <div class="head">
-        <h3>Postdoctoral Researcher</h3>
-        <span class="status">Call expected Mar/Apr</span>
-      </div>
-      <p>A four-year position (80%) on HIDDENPOL, hired through an open call, for a researcher with a background in Computational Social Science. The role offers substantial autonomy to develop an independent research profile while contributing to the project's cross-country experimental and computational work.</p>
-      <div class="apply">Open call expected March/April</div>
-    </div>
-  </div>
-</section>
+    <div class="pub"><span class="year">2026</span><strong>Hoes, E.</strong> &amp; Altay, S. Debriefings in Misinformation Research Should Include Fact-Checks to Correct Misperceptions and Increase Perceived Learning. <span class="venue">Political Science Research and Methods</span>. <a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/debriefings-in-misinformation-research-should-include-factchecks-to-correct-misperceptions-and-increase-perceived-learning/F1A46ABFE0132333B187FC4F70E1AA54" target="_blank" rel="noopener">link</a></div>
 
-<footer>
-  <div class="wrap">
-    <div class="fund">
-      <img src="assets/img/erc-eu-logo.png" alt="Funded by the European Union — European Research Council">
-      <div class="txt">
-        HIDDENPOL is funded by the European Union (ERC, HIDDENPOL, 101296845). Views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council. Neither the European Union nor the granting authority can be held responsible for them.
+    <div class="pub"><span class="year">2026</span>Gilardi, F., Di Lorenzo, S., Ezzaini, J., Santa, B., Streiff, B., Zurfluh, E., &amp; <strong>Hoes, E.</strong> Quality Perceptions and Intended Engagement in Response to AI-Generated and AI-Assisted News. <span class="venue">Scientific Reports</span>. <a href="https://www.nature.com/articles/s41598-026-58743-0" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2025</span><strong>Hoes, E.</strong>, Clemm von Hohenberg, B., Gessler, T., Qian, S., &amp; Wojcieszak, M. (Media Attention to) Misinformation Can Undermine Trust in Scientists. <span class="venue">Political Behavior</span>. <a href="https://link.springer.com/article/10.1007/s11109-025-10090-y" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2025</span>Altay, S., <strong>Hoes, E.</strong>, &amp; Wojcieszak, M. News Informs and Boosts Discernment: A Replication in France and Germany. <span class="venue">International Journal of Press/Politics</span>. <a href="https://journals.sagepub.com/doi/10.1177/19401612251378969" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2025</span><strong>Hoes, E.</strong> &amp; Gilardi, F. Existential Risk Narratives About Artificial Intelligence Do Not Distract From Its Immediate Harms. <span class="venue">PNAS</span>. <a href="https://www.pnas.org/doi/full/10.1073/pnas.2419055122" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2025</span>Altay, S., <strong>Hoes, E.</strong>, &amp; Wojcieszak, M. News on Social Media Boosts Knowledge, Belief Accuracy, and Trust: A Field Experiment on Instagram and WhatsApp. <span class="venue">Nature Human Behaviour</span>. <a href="https://www.nature.com/articles/s41562-025-02205-6" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2024</span>Altay, S., de Angelis, A., &amp; <strong>Hoes, E.</strong> Media Literacy Tips Promoting Reliable News Improve Discernment and Enhance Trust in Traditional Media. <span class="venue">Communications Psychology</span>, 2(74). <a href="https://www.nature.com/articles/s44271-024-00121-5" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2024</span><strong>Hoes, E.</strong>, Aitken, B., Gackowski, T., Zhang, J., &amp; Wojcieszak, M. Prominent Misinformation Interventions Reduce Misperceptions but Increase Skepticism. <span class="venue">Nature Human Behaviour</span>, 1–9. <a href="https://www.nature.com/articles/s41562-024-01884-x" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2024</span>Marchal, N., <strong>Hoes, E.</strong>, Klüser, K. J., Hamborg, F., Alizadeh, M., Kubli, M., &amp; Katzenbach, C. How Negative Media Coverage Impacts Platform Governance: Evidence from Facebook, Twitter, and YouTube. <span class="venue">Political Communication</span>, 42(2), 215–233. <a href="https://www.tandfonline.com/doi/full/10.1080/10584609.2024.2377992" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2023</span>Nasr, M. &amp; <strong>Hoes, E.</strong> The Times They Are A-Changing: An Experimental Assessment of the Causes and Consequences of Sudden Policy U-turns. <span class="venue">European Journal of Political Research</span>. <a href="https://ejpr.onlinelibrary.wiley.com/doi/10.1111/1475-6765.12650" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2023</span>Alizadeh, M., <strong>Hoes, E.</strong>, &amp; Gilardi, F. Tokenization of Social Media Engagements Increases the Sharing of False (and Other) News but Penalization Moderates It. <span class="venue">Scientific Reports</span>, 13. <a href="https://www.nature.com/articles/s41598-023-40716-2" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2023</span><strong>Hoes, E.</strong>, Kamphorst, J., &amp; Krouwel, A. Prominence over Proximity? The Effects of Terrorist Attacks on Party Preferences for Incumbent versus Populist Radical Right Parties. <span class="venue">European Political Science Review</span>, 1–19. <a href="https://doi.org/10.1017/S175577392300019X" target="_blank" rel="noopener">link</a></div>
+
+    <div class="pub"><span class="year">2022</span>Alizadeh, M., Gilardi, F., <strong>Hoes, E.</strong>, Klüser, K. J., Kubli, M., &amp; Marchal, N. Content Moderation as a Political Issue: The Twitter Discourse Around Trump's Ban. <span class="venue">Journal of Quantitative Description: Digital Media</span>, 2. <a href="https://doi.org/10.51685/jqd.2022.023" target="_blank" rel="noopener">link</a></div>
+  </section>
+
+  <section id="chapters">
+    <div class="eyebrow">Book chapters</div>
+    <h2>Book chapters</h2>
+
+    <div class="pub"><span class="year">2027</span><strong>Hoes, E.</strong> Trust Erosion in the Digital Age. In M. M. Torres (Ed.), <span class="venue">Public Trust in Institutions: Qualitative and Quantitative Perspectives</span>. Elsevier. <span class="tag">forthcoming</span></div>
+
+    <div class="pub"><span class="year">2022</span><strong>Hoes, E.</strong> De Media en Politieke Polarisatie: De Rol van Ons Gedrag. In P. Dekker (Ed.), <span class="venue">Politieke Polarisatie in Nederland</span> (Ch. 9). Het Wereldvenster.</div>
+  </section>
+
+  <section id="working">
+    <div class="eyebrow">Working papers</div>
+    <h2>In progress &amp; under review</h2>
+
+    <div class="shelf-hint">scroll for working-paper previews</div>
+    <div class="shelf">
+      <div class="shelf-row">
+
+<a class="card">
+          <div class="thumb"><div class="corner"></div>
+            <div class="ph" style="display:flex"><div class="v">working paper</div><div class="t">Indirect Effects of Content Moderation Errors: A Chatroom Experiment with AI Agents</div></div>
+          </div>
+          <div class="cap">working paper</div>
+        </a>
+
+<a class="card">
+          <div class="thumb"><div class="corner"></div>
+            <div class="ph" style="display:flex"><div class="v">working paper</div><div class="t">Bystander or Bot? The Effects of Human versus AI Responses to Online Hostility</div></div>
+          </div>
+          <div class="cap">working paper</div>
+        </a>
+
+<a class="card">
+          <div class="thumb"><div class="corner"></div>
+            <div class="ph" style="display:flex"><div class="v">working paper</div><div class="t">Following Alpha Male and Tradwife Influencers: A Field Experiment on Attitudes, Norms, and Wellbeing</div></div>
+          </div>
+          <div class="cap">working paper</div>
+        </a>
+
+<a class="card">
+          <div class="thumb"><div class="corner"></div>
+            <div class="ph" style="display:flex"><div class="v">working paper</div><div class="t">Increasing Consumption of High-Quality News on Instagram and TikTok: A Field Experiment</div></div>
+          </div>
+          <div class="cap">working paper</div>
+        </a>
+
+<a class="card">
+          <div class="thumb"><div class="corner"></div>
+            <div class="ph" style="display:flex"><div class="v">working paper</div><div class="t">Same News, Different Package: How Format Shapes Engagement with the News</div></div>
+          </div>
+          <div class="cap">working paper</div>
+        </a>
+
+<a class="card" href="assets/pdf/klueser-hoes-deepfakes.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/deepfakes.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">R&amp;R</div><div class="t">AI-Generated Explicit Deepfakes Damage Politicians' Perceived Competence</div></div>
+          </div>
+          <div class="cap">R&amp;R</div>
+        </a>
+
+<a class="card" href="assets/pdf/virena.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/virena.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">in development</div><div class="t">VIRENA: Virtual Arena for Research, Education, and Democratic Innovation</div></div>
+          </div>
+          <div class="cap">in development</div>
+        </a>
+
+<a class="card" href="assets/pdf/hoes-klueser-influencers.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/influencers.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">archived</div><div class="t">(Dis)information for Hire? Influencers and Misinformation</div></div>
+          </div>
+          <div class="cap">archived</div>
+        </a>
+
+<a class="card" href="assets/pdf/kubli-hoes-umansky-blackbox.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/blackbox.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">archived</div><div class="t">The Blackbox of Social Media Content Moderation</div></div>
+          </div>
+          <div class="cap">archived</div>
+        </a>
+
+<a class="card" href="assets/pdf/hoes-altay-chatgpt-factchecking.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/chatgpt-factcheck.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">archived</div><div class="t">Leveraging ChatGPT for Efficient Fact-Checking</div></div>
+          </div>
+          <div class="cap">archived</div>
+        </a>
+
+<a class="card" href="assets/pdf/hoes-media-literacy-did.pdf" target="_blank" rel="noopener">
+          <div class="thumb"><div class="corner"></div>
+            <img src="assets/thumbs/media-literacy-did.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph" style="display:none"><div class="v">archived</div><div class="t">The Effect of a Real-World, Long-Term Media Literacy Intervention</div></div>
+          </div>
+          <div class="cap">archived</div>
+        </a>
+
       </div>
     </div>
-    <div class="foot-meta">
-      <span>© <span id="yr">2026</span> HIDDENPOL · Emma Hoes, University of Zurich</span>
-      <span><a href="https://emmahoes.com">emmahoes.com</a> · <a href="mailto:hoes@ipz.uzh.ch">hoes@ipz.uzh.ch</a></span>
+
+    <div class="pub"><strong>Indirect Effects of Content Moderation Errors: A Chatroom Experiment with AI Agents</strong> — with Giuliano Formisano, Colin Henry, Adiba Proma, K. Jonathan Klüser, Karsten Donnay, and Fabrizio Gilardi</div>
+
+    <div class="pub"><strong>Bystander or Bot? The Effects of Human versus AI Responses to Online Hostility</strong> — with Lasse Lindekilde, K. Jonathan Klüser, and Friederike Quint</div>
+
+    <div class="pub"><strong>Following Alpha Male and Tradwife Influencers: A Field Experiment on Attitudes, Norms, and Wellbeing</strong> — with K. Jonathan Klüser, Sacha Altay, and Vicente Valentim</div>
+
+    <div class="pub"><strong>Increasing Consumption of High-Quality News on Instagram and TikTok: A Field Experiment</strong> — with Erin Wertz and Magdalena Wojcieszak</div>
+
+    <div class="pub"><strong>Same News, Different Package: How Format Shapes Engagement with the News</strong> — with Erin Wertz and Magdalena Wojcieszak</div>
+
+    <div class="pub"><strong>AI-Generated Explicit Deepfakes Damage Politicians' Perceived Leadership Competence, Trustworthiness and Electoral Prospects</strong> — with Sophie Klüser and K. Jonathan Klüser <span class="tag">R&amp;R</span> <a href="assets/pdf/klueser-hoes-deepfakes.pdf" target="_blank" rel="noopener">preprint</a></div>
+
+    <div class="pub"><strong>VIRENA: Virtual Arena for Research, Education, and Democratic Innovation</strong> — with K. Jonathan Klüser and Fabrizio Gilardi <span class="tag">in development</span> <a href="assets/pdf/virena.pdf" target="_blank" rel="noopener">link</a></div>
+
+
+
+    <div class="subhead" style="margin-top:30px">Archived</div>
+
+    <div class="pub"><strong>(Dis)information for Hire? Dispelling Exaggerated Concerns about Social Media Influencers' Role in Spreading Misinformation</strong> — with K. Jonathan Klüser <a href="assets/pdf/hoes-klueser-influencers.pdf" target="_blank" rel="noopener">preprint</a></div>
+
+    <div class="pub"><strong>The Blackbox of Social Media Content Moderation: A First Look into a Novel Twitter Dataset</strong> — with Maël Kubli and Natalia Umansky <a href="assets/pdf/kubli-hoes-umansky-blackbox.pdf" target="_blank" rel="noopener">preprint</a></div>
+
+    <div class="pub"><strong>Leveraging ChatGPT for Efficient Fact-Checking</strong> — with Sacha Altay and Juan Bermeo <a href="assets/pdf/hoes-altay-chatgpt-factchecking.pdf" target="_blank" rel="noopener">preprint</a></div>
+
+    <div class="pub"><strong>The Effect of a Real-World, Long-Term Media Literacy Intervention: A Difference-in-Differences Approach</strong> <a href="assets/pdf/hoes-media-literacy-did.pdf" target="_blank" rel="noopener">preprint</a></div>
+  </section>
+
+  <section id="teaching">
+    <div class="eyebrow">Teaching</div>
+    <h2>Teaching, workshops &amp; supervision</h2>
+
+    <div class="subhead">Bachelor courses</div>
+    <div class="trow"><div class="ttl">Agenda Setting and the Media: Framing the Political Debate (Bachelor specialisation) <span class="inst">· University of Zurich</span></div><span class="yrs"><b>Taught:</b> Fall/Spring 2024/25 &amp; 2025/26</span></div>
+
+    <div class="subhead">Master courses</div>
+    <div class="trow"><div class="ttl">(Fake) News &amp; What (Not) To Do About It <span class="inst">· University of Zurich</span></div><span class="yrs"><b>Taught:</b> Spring 2022, 2023, 2025 &amp; 2026</span></div>
+
+    <div class="subhead">Workshops</div>
+    <div class="trow"><div class="ttl">Experimental Design and Open Science <span class="inst">· ECPR Methods School</span></div><span class="yrs"><b>Taught:</b> Sep 2026</span></div>
+    <div class="trow"><div class="ttl">Digital Skills Workshop: Experimental (Survey) Methods in Social Sciences (Master &amp; PhD) <span class="inst">· University of Lucerne</span></div><span class="yrs"><b>Taught:</b> Fall 2025</span></div>
+    <div class="trow"><div class="ttl">From Dream to Draft: Converting Ideas to Text with a Compelling Start (PhD) <span class="inst">· University of Zurich</span></div><span class="yrs"><b>Taught:</b> Spring 2024</span></div>
+
+    <div class="subhead">Supervision</div>
+
+    <p class="supnote">I supervise students at both the BA and MA level. To date I have supervised 4 MA students and 19 BA students. One of my BA supervisees received the Department of Political Science's <strong>Best Bachelor Thesis</strong> award (University of Zurich, 2025).</p>
+  </section>
+
+  <section id="contact">
+    <div class="eyebrow">Contact</div>
+    <h2>Get in touch</h2>
+    <p class="contact">Email is the best way to reach me: <a href="mailto:hoes@ipz.uzh.ch">hoes@ipz.uzh.ch</a></p>
+    <div class="contact">
+      <div class="addr">
+        Department of Political Science<br>
+        University of Zurich<br>
+        Affolternstrasse 56<br>
+        8050 Zurich, Switzerland
+      </div>
     </div>
-  </div>
-</footer>
+    <p style="margin-top:22px"><a class="btn" href="assets/docs/CV_Hoes.pdf">Download CV (PDF)</a></p>
+  </section>
+
+</main>
+
+<footer>© 2026 Emma Hoes <span class="amp">·</span> Hosted on GitHub Pages</footer>
 
 <script>
 (function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('nav .links a[href^="#"]'));
-  var map = links.map(function(a){var el=document.getElementById(a.getAttribute('href').slice(1));return el?{a:a,el:el}:null;}).filter(Boolean);
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a[href^="#"]'));
+  var map = links.map(function(a){
+    var el = document.getElementById(a.getAttribute('href').slice(1));
+    return el ? {a:a, el:el} : null;
+  }).filter(Boolean);
+  if(!map.length) return;
+
   function setActive(item){
-    links.forEach(function(a){a.classList.remove('active');});
+    links.forEach(function(a){ a.classList.remove('active'); });
     if(item) item.a.classList.add('active');
   }
+
   function onScroll(){
-    var navH = document.querySelector('nav').offsetHeight, cur = map[0];
-    for(var i=0;i<map.length;i++){ if(map[i].el.getBoundingClientRect().top <= navH + 40) cur = map[i]; }
-    if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = map[map.length-1];
-    setActive(cur);
+    var navH = document.querySelector('nav').offsetHeight;
+    var current = map[0];
+    for(var i=0;i<map.length;i++){
+      // a section counts as "current" once its top passes just below the nav
+      if(map[i].el.getBoundingClientRect().top <= navH + 40) current = map[i];
+    }
+    // at the very bottom of the page, highlight the last section (Contact)
+    if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4){
+      current = map[map.length - 1];
+    }
+    setActive(current);
   }
-  links.forEach(function(a){ a.addEventListener('click', function(){ setActive(map.filter(function(m){return m.a===a;})[0]); }); });
+
+  // clicking a link highlights it straight away
+  links.forEach(function(a){
+    a.addEventListener('click', function(){
+      setActive(map.filter(function(m){ return m.a === a; })[0]);
+    });
+  });
+
   window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll); onScroll();
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  window.addEventListener('resize', onScroll);
+  onScroll();
 })();
 </script>
 </body>

@@ -74,8 +74,12 @@ nav a{border-bottom:none}
 nav a:hover{color:var(--amber-deep);text-decoration:none;border-bottom:none}
 nav a.active{color:var(--amber-deep)}
 nav a.active::after{content:"";display:block;height:2px;background:var(--amber);border-radius:2px;margin-top:3px}
-nav a.proj{color:var(--ink);font-weight:600}
-nav a.proj:hover{color:var(--amber-deep)}
+nav a.proj{display:inline-flex;align-items:center;gap:6px;color:var(--ink);border-bottom:none;flex-basis:100%;margin-top:2px}
+nav a.proj:hover{color:var(--ink);text-decoration:none;border-bottom:none}
+nav a.proj svg{display:block;flex:0 0 auto}
+nav a.proj .wm{font-family:var(--wordmark);font-size:14px;font-weight:600;letter-spacing:-.01em;color:#3a1030}
+nav a.proj .wm b{color:#8b2f6b;font-weight:600}
+nav a.proj:hover .wm b{color:#6f1f52}
 section[id], header[id]{scroll-margin-top:64px}
 
 /* ---------- HERO (dark band) ---------- */
@@ -209,8 +213,11 @@ footer .amp{color:var(--amber-deep)}
     <a href="#working">Working papers</a>
     <a href="#teaching">Teaching</a>
     <a href="#contact">Contact</a>
-    <a class="proj" href="/hiddenpol/">HIDDENPOL ↗</a>
     <a href="assets/docs/CV_Hoes.pdf" target="_blank" rel="noopener">CV</a>
+    <a class="proj" href="/hiddenpol/" title="HIDDENPOL — ERC project">
+      <svg width="16" height="17" viewBox="0 0 22 24" aria-hidden="true"><line x1="1" y1="11" x2="21" y2="11" stroke="#b98cff" stroke-width="1.2" stroke-dasharray="2 2"/><path d="M11 2 L15 11 L7 11 Z" fill="#8b2f6b"/><path d="M7 11 L15 11 L18 21 L4 21 Z" fill="#8b2f6b" opacity="0.32"/></svg>
+      <span class="wm">HIDDEN<b>POL</b></span>
+    </a>
   </div>
 </nav>
 

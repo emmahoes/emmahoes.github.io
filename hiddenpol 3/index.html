@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIDDENPOL — The Hidden Politics of Everyday Media</title>
+<meta name="description" content="HIDDENPOL is an ERC Starting Grant project (PI Emma Hoes, University of Zurich) studying how everyday, seemingly apolitical media shape citizens' political values, beliefs, and orientations.">
+<meta name="keywords" content="HIDDENPOL, ERC Starting Grant, Emma Hoes, political learning, everyday media, social media, politicalness, misinformation, polarization, field experiments, University of Zurich">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HIDDENPOL — The Hidden Politics of Everyday Media">
+<meta property="og:description" content="An ERC Starting Grant project studying how everyday media quietly shape political values and beliefs.">
+<meta property="og:image" content="https://emmahoes.com/hiddenpol/assets/img/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --dark:#1c1526;
+  --dark-2:#261d33;
+  --dark-line:#322842;
+  --on-dark:#e9e4f0;
+  --on-dark-soft:#c9c1d8;
+  --on-dark-mute:#9a8cb5;
+  --violet:#b98cff;
+
+  --paper:#fdf9fb;
+  --paper-2:#ffffff;
+  --ink:#2a1030;
+  --ink-soft:#5a4a58;
+  --muted:#8a7686;
+  --line:#ecdfe8;
+  --plum:#8b2f6b;
+  --plum-deep:#6f1f52;
+  --plum-soft:#f6e6f0;
+
+  --serif:'Fraunces',Georgia,serif;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:#e7b8d8;color:#2a1030}
+.wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+section[id],header[id]{scroll-margin-top:64px}
+a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--plum)}
+a:hover{color:var(--plum-deep)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(28,21,38,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--dark-line)}
+nav .inner{max-width:1000px;margin:0 auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+nav .brand{display:flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.01em;color:#f3edfa;border:none}
+nav .brand b{color:var(--violet);font-weight:700}
+nav .brand svg{display:block}
+nav .links{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:12.5px}
+nav .links a{color:var(--on-dark-mute);border:none}
+nav .links a:hover{color:var(--violet)}
+nav .links a.active{color:var(--violet)}
+nav .links a.active::after{content:"";display:block;height:2px;background:var(--violet);border-radius:2px;margin-top:3px}
+nav .links a.home{color:var(--on-dark)}
+
+.hero{background:var(--dark);color:var(--on-dark);padding:66px 0 64px}
+.hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);margin-bottom:22px}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.6vw,60px);line-height:1.02;letter-spacing:-.015em;margin:0;color:#fff}
+.hero h1 b{color:var(--violet);font-weight:700}
+.hero .meta{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--on-dark-mute)}
+.hero .meta b{color:var(--on-dark);font-weight:600}
+
+.section{padding:56px 0;border-top:1px solid var(--line)}
+.section:first-of-type{border-top:none}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--plum-deep);display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.eyebrow::before{content:"";width:20px;height:3px;background:var(--plum);border-radius:2px}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.4vw,34px);letter-spacing:-.01em;margin:0 0 22px;color:var(--ink)}
+h3{font-family:var(--disp);font-weight:600;font-size:19px;margin:0 0 6px;color:var(--ink)}
+
+.about p{max-width:70ch;color:var(--ink-soft);margin:0 0 18px}
+.about p .hl{color:var(--ink);font-weight:600}
+
+.stat-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+.stat{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:20px 22px;flex:1 1 210px;display:flex;gap:15px;align-items:flex-start}
+.stat .ic{flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:var(--plum-soft);display:flex;align-items:center;justify-content:center;color:var(--plum-deep);margin-top:2px}
+.stat .n{font-family:var(--disp);font-weight:700;font-size:24px;color:var(--plum-deep);line-height:1.05}
+.stat .l{font-size:14px;color:var(--muted);margin-top:5px;line-height:1.4}
+
+.wps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}
+.wp{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.wp .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--plum-deep);background:var(--plum-soft);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px}
+.wp p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.5}
+
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;margin-top:10px}
+.person{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:24px}
+.person.tbd{border-style:dashed;background:var(--paper);display:flex;flex-direction:column;justify-content:center}
+.person .avatar{width:60px;height:60px;border-radius:50%;background:var(--plum-soft);color:var(--plum-deep);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:22px;margin-bottom:14px;overflow:hidden}
+.person .avatar img{width:100%;height:100%;object-fit:cover}
+.person .role{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--plum-deep);margin-top:2px}
+.person p{font-size:14px;color:var(--muted);margin:10px 0 0;line-height:1.5}
+.person .lk{margin-top:12px;font-family:var(--mono);font-size:12px}
+
+.pos-intro{color:var(--ink-soft);max-width:70ch;margin:0 0 24px}
+.position{background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--plum);border-radius:12px;padding:22px 26px;margin-bottom:14px}
+.position .head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.position .status{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--plum-deep);background:var(--plum-soft);border-radius:20px;padding:4px 12px;white-space:nowrap}
+.position p{color:var(--ink-soft);margin:12px 0 0;font-size:15px;max-width:70ch;line-height:1.55}
+.position .apply{margin-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+
+footer{background:var(--dark);color:var(--on-dark-soft);padding:48px 0 56px}
+.fund{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.fund img{height:78px;width:auto;background:#fff;border-radius:8px;padding:8px}
+.fund .txt{font-size:13.5px;color:var(--on-dark-mute);max-width:54ch;line-height:1.55}
+.foot-meta{margin-top:30px;padding-top:22px;border-top:1px solid var(--dark-line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--on-dark-mute)}
+.foot-meta a{color:var(--on-dark);border:none}
+.foot-meta a:hover{color:var(--violet)}
+
+@media (max-width:600px){
+  body{font-size:16px}
+  .hero{padding:46px 0 44px}
+  nav .links{gap:14px;font-size:11.5px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <span class="brand">
+      <svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><line x1="1" y1="11" x2="21" y2="11" stroke="#7c5fa8" stroke-width="1" stroke-dasharray="2 2"/><path d="M11 2 L15 11 L7 11 Z" fill="#b98cff"/><path d="M7 11 L15 11 L18 21 L4 21 Z" fill="#b98cff" opacity="0.3"/></svg>
+      <span class="wm">HIDDEN<b>POL</b></span>
+    </span>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#positions">Positions</a>
+      <a class="home" href="https://emmahoes.com">Emma Hoes ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="wrap">
+    <div class="kicker">ERC Starting Grant · University of Zurich</div>
+    <h1>The hidden politics of <b>everyday media</b></h1>
+    <div class="meta">
+      <span><b>PI</b> &nbsp;Emma Hoes</span>
+      <span><b>Funder</b> &nbsp;European Research Council</span>
+      <span><b>Duration</b> &nbsp;Jan 2027 – 2031 (60 months)</span>
+      <span><b>Panel</b> &nbsp;SH3</span>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="section about">
+  <div class="wrap">
+    <div class="eyebrow">About the project</div>
+    <h2>Everyday content, hidden political effects</h2>
+
+    <p>Scholars overwhelmingly study the consequences of political content, yet this material makes up only <span class="hl">3% of what people encounter online</span>. The remaining 97% is everyday content such as entertainment, blogs, lifestyle sites and social media influencers. HIDDENPOL argues that this widely consumed content can have important political consequences for citizens' values, beliefs, and orientations. If this is the case, then both research and policy are missing the very content that may be driving today's democratic challenges, such as rising misperceptions, polarization, and declining trust.</p>
+
+    <p>I argue that media effects depend not only on content's political properties, but on how these are perceived and processed. Explicitly political content often triggers defense mechanisms (skepticism, counterarguing, reinforcement), limiting its impact. Everyday content, in contrast, embeds <span class="hl">'hidden' political cues</span> (e.g., a cooking show featuring only women). When unrecognized, these cues may bypass defenses and quietly shape orientations. HIDDENPOL theorizes that such under-recognition explains why the overlooked 97% may be politically consequential and introduces <span class="hl">politicalness</span> as the concept that explains when everyday content becomes politically meaningful.</p>
+
+    <p>HIDDENPOL pursues four goals: it develops a new framework for understanding how media shape values and beliefs (WP1); classifies online content from Instagram, TikTok, YouTube, and websites in the Netherlands, Spain, and the United States (WP2); examines how audiences perceive this content and how perceptions evolve (WP3); and tests causal effects with survey- (WP4a) and field-experiments (WP4b).</p>
+
+    <p>The results will reorient media-effects theory and reveal whether current responses to democratic challenges — fact-checking, media literacy, regulation — are too narrowly targeted, leaving potentially powerful but overlooked drivers of change in citizens' values and beliefs unchecked.</p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c0-1.5 3.6-2.5 8-2.5s8 1 8 2.5-3.6 2.5-8 2.5S4 8.5 4 7Z"/><path d="M4 7v10c0 1.5 3.6 2.5 8 2.5s8-1 8-2.5V7"/><path d="M4 12c0 1.5 3.6 2.5 8 2.5s8-1 8-2.5"/></svg>
+        </div>
+        <div><div class="n">97%</div><div class="l">of online content is everyday, not explicitly political</div></div>
+      </div>
+      <div class="stat">
+        <div class="ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/><path d="M12 3.2a15 15 0 0 0 0 17.6M12 3.2a15 15 0 0 1 0 17.6"/></svg>
+        </div>
+        <div><div class="n">3 countries</div><div class="l">Netherlands · Spain · United States</div></div>
+      </div>
+      <div class="stat">
+        <div class="ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M8 20h8M12 16.5V20"/></svg>
+        </div>
+        <div><div class="n">4 platforms</div><div class="l">Instagram · TikTok · YouTube · websites</div></div>
+      </div>
+    </div>
+
+    <div class="wps">
+      <div class="wp"><span class="tag">WP1</span><p>A new framework for how media shape values and beliefs.</p></div>
+      <div class="wp"><span class="tag">WP2</span><p>Classifying online content across platforms and countries.</p></div>
+      <div class="wp"><span class="tag">WP3</span><p>How audiences perceive this content, and how perceptions evolve.</p></div>
+      <div class="wp"><span class="tag">WP4</span><p>Testing causal effects with survey and field experiments.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="section">
+  <div class="wrap">
+    <div class="eyebrow">Team</div>
+    <h2>People</h2>
+    <div class="people">
+      <div class="person">
+        <div class="avatar"><img src="assets/img/emma.jpg" alt="Emma Hoes"></div>
+        <h3>Emma Hoes</h3>
+        <div class="role">Principal Investigator</div>
+        <p>Political scientist and experimentalist at the University of Zurich, studying how digital technologies shape the information ecosystem.</p>
+        <div class="lk"><a href="https://emmahoes.com">emmahoes.com ↗</a></div>
+      </div>
+      <div class="person tbd">
+        <h3 style="color:var(--muted)">Joining soon</h3>
+        <p>A postdoctoral researcher and research assistants will join the team from 2027. See open positions below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="positions" class="section">
+  <div class="wrap">
+    <div class="eyebrow">Join the team</div>
+    <h2>Open positions</h2>
+    <p class="pos-intro">HIDDENPOL is building its team for the project start in January 2027. Calls for the positions below will open soon. If you're interested, feel free to reach out ahead of time.</p>
+
+    <div class="position">
+      <div class="head">
+        <h3>Research Assistants (BA / MA)</h3>
+        <span class="status">Call out soon</span>
+      </div>
+      <p>Part-time positions supporting the project's data collection and content-classification work across the Netherlands, Spain, and the United States. A good fit for students interested in political communication, computational methods, and experimental research. Speaking Dutch and/or Spanish is a plus.</p>
+      <div class="apply">Call expected shortly</div>
+    </div>
+
+    <div class="position">
+      <div class="head">
+        <h3>Postdoctoral Researcher</h3>
+        <span class="status">Call expected Mar/Apr</span>
+      </div>
+      <p>A four-year position (80%) on HIDDENPOL, hired through an open call, for a researcher with a background in Computational Social Science. The role offers substantial autonomy to develop an independent research profile while contributing to the project's cross-country experimental and computational work.</p>
+      <div class="apply">Open call expected March/April</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fund">
+      <img src="assets/img/erc-eu-logo.png" alt="Funded by the European Union — European Research Council">
+      <div class="txt">
+        HIDDENPOL is funded by the European Union (ERC, HIDDENPOL, 101296845). Views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council. Neither the European Union nor the granting authority can be held responsible for them.
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span>© <span id="yr">2026</span> HIDDENPOL · Emma Hoes, University of Zurich</span>
+      <span><a href="https://emmahoes.com">emmahoes.com</a> · <a href="mailto:hoes@ipz.uzh.ch">hoes@ipz.uzh.ch</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav .links a[href^="#"]'));
+  var map = links.map(function(a){var el=document.getElementById(a.getAttribute('href').slice(1));return el?{a:a,el:el}:null;}).filter(Boolean);
+  function onScroll(){
+    var pos = window.scrollY + 80, cur = map[0];
+    for(var i=0;i<map.length;i++){ if(map[i].el.offsetTop <= pos) cur = map[i]; }
+    links.forEach(function(a){a.classList.remove('active');});
+    if(cur) cur.a.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll); onScroll();
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

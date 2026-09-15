@@ -66,15 +66,15 @@ a:hover{text-decoration:underline;text-underline-offset:2px}
 
 /* ---------- NAV ---------- */
 nav{position:sticky;top:0;z-index:50;background:rgba(254,253,246,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .inner{max-width:var(--maxw);margin:0 auto;padding:13px 24px;display:flex;flex-wrap:wrap;gap:20px;align-items:baseline}
-nav .brand{font-family:var(--wordmark);font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1;margin-right:auto;flex:0 0 auto}
+nav .inner{max-width:var(--maxw);margin:0 auto;padding:13px 24px;display:flex;flex-wrap:nowrap;gap:20px;align-items:center;justify-content:space-between}
+nav .brand{font-family:var(--wordmark);font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1;flex:0 0 auto;white-space:nowrap}
 nav .brand b{color:var(--amber);font-weight:600}
 nav a{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.01em}
 nav a{border-bottom:none}
 nav a:hover{color:var(--amber-deep);text-decoration:none;border-bottom:none}
 nav a.active{color:var(--amber-deep)}
 nav a.active::after{content:"";display:block;height:2px;background:var(--amber);border-radius:2px;margin-top:3px}
-.navlinks{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:flex-end}
+.navlinks{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:flex-end;flex:0 1 auto}
 nav a.proj{display:inline-flex;align-items:center;gap:6px;color:var(--ink);border-bottom:none;margin-top:0}
 nav a.proj:hover{color:var(--ink);text-decoration:none;border-bottom:none}
 nav a.proj svg{display:block;flex:0 0 auto}
@@ -195,6 +195,8 @@ footer{max-width:var(--maxw);margin:0 auto;padding:26px 24px 52px;font-family:va
 footer .amp{color:var(--amber-deep)}
 
 @media(max-width:560px){
+  nav .inner{flex-wrap:wrap;justify-content:flex-start}
+  .navlinks{justify-content:flex-start}
   .hero{grid-template-columns:1fr;gap:24px;padding:48px 24px 44px}
   .hero img{width:116px;height:116px}
   .hero h1{font-size:36px}

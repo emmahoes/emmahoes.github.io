@@ -67,15 +67,16 @@ a:hover{text-decoration:underline;text-underline-offset:2px}
 /* ---------- NAV ---------- */
 nav{position:sticky;top:0;z-index:50;background:rgba(254,253,246,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .inner{max-width:var(--maxw);margin:0 auto;padding:11px 24px 9px}
-.navrow{display:flex;flex-wrap:nowrap;gap:20px;align-items:center;justify-content:space-between}
-nav .brand{font-family:var(--wordmark);font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1;flex:0 0 auto;white-space:nowrap}
+/* 186px = the 148px photo + the 38px gutter below, so the links start exactly at the text column */
+.navrow{display:flex;flex-wrap:nowrap;gap:0;align-items:center;justify-content:space-between}
+nav .brand{font-family:var(--wordmark);font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1;flex:0 0 186px;white-space:nowrap}
 nav .brand b{color:var(--amber);font-weight:600}
 nav a{position:relative;font-family:var(--mono);font-size:12px;line-height:1.4;color:var(--muted);letter-spacing:0;border-bottom:none;white-space:nowrap}
 nav a:hover{color:var(--amber-deep);text-decoration:none;border-bottom:none}
 nav a.active{color:var(--amber-deep)}
 /* underline floats below the link, so it never shifts the row */
 nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--amber);border-radius:2px}
-.navlinks{display:flex;flex-wrap:nowrap;gap:14px;align-items:center;justify-content:flex-end;flex:0 1 auto}
+.navlinks{display:flex;flex-wrap:nowrap;gap:18px;align-items:center;justify-content:space-between;flex:1 1 auto}
 /* second row: project logos */
 .projrow{display:flex;align-items:center;gap:12px;justify-content:flex-end;margin-top:8px;padding-top:7px;border-top:1px solid var(--line)}
 .projlabel{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
@@ -208,8 +209,9 @@ footer .amp{color:var(--amber-deep)}
 
 /* narrower screens: allow the nav to wrap onto two rows */
 @media(max-width:820px){
-  .navrow{flex-wrap:wrap;row-gap:10px}
-  .navlinks{flex-wrap:wrap;row-gap:10px;justify-content:flex-start}
+  .navrow{flex-wrap:wrap;row-gap:10px;gap:20px}
+  nav .brand{flex:0 0 auto}
+  .navlinks{flex-wrap:wrap;row-gap:10px;justify-content:flex-start;max-width:none}
   .projrow{flex-wrap:wrap;row-gap:8px;justify-content:flex-start}
   .projlabel{margin-right:0}
 }
